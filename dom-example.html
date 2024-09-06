@@ -4,7 +4,18 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Simple DOM example</title>
+
+        <style>
+            .highlight {
+                color: #ffb100;
+                background-color: blueviolet;
+                padding: 10px;
+                width: 250px;
+                text-align: center;
+            }
+        </style>
     </head>
+
     <body>
         <section>
             <img
@@ -43,16 +54,22 @@
             sect.appendChild(linkPara);
 
             sect.removeChild(linkPara);
-            
+
             linkPara.remove();
-            
-            
-            para.style.color = "white";
-            para.style.background = "black";
-            para.style.padding = "10px";
-            para.style.width = "250px";
-            para.style.textAlign = "center";
-            
+
+            //para.style.color = "white";
+            //para.style.background = "black";
+            //para.style.padding = "10px";
+            //para.style.width = "250px";
+            //para.style.textAlign = "center";
+
+            //para.style.color = null;
+            //para.style.background = null;
+            //para.style.padding = null";
+            //para.style.width = null;
+            //para.style.textAlign = null;
+
+            para.setAttribute("class", "highlight");
         </script>
     </body>
 </html>
