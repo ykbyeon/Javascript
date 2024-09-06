@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple DOM example</title>
+    </head>
+    <body>
+        <section>
+            <img
+                src="dinosaur.png"
+                alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth." />
+            <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+
+            <!--<p>222 Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>-->
+        </section>
+
+        <script>
+            const link = document.querySelector("a");
+            //const link = document.querySelector("a");
+
+            link.textContent = "Mozilla Developer Network";
+            link.href = "https://developer.mozilla.org";
+
+            const sect = document.querySelector("section");
+
+            const para = document.createElement("p");
+            para.textContent = "We hope you enjoyed the ride.";
+
+            sect.appendChild(para);
+
+            const text = document.createTextNode(" - the premier source for web development knowledge.");
+            //const text1 = document.createTextNode(" - the premier source for web development knowledge.1");
+            //const text2 = document.createTextNode(" - the premier source for web development knowledge.2");
+
+            const linkPara = document.querySelector("p");
+            linkPara.appendChild(text);
+
+            //const linkParaList = document.querySelectorAll('p');
+            //linkParaList[1].appendChild(text1);
+            //linkParaList[2].appendChild(text2);
+
+            sect.appendChild(linkPara);
+
+            sect.removeChild(linkPara);
+            
+            linkPara.remove();
+            
+            
+            para.style.color = "white";
+            para.style.background = "black";
+            para.style.padding = "10px";
+            para.style.width = "250px";
+            para.style.textAlign = "center";
+            
+        </script>
+    </body>
+</html>
