@@ -1,0 +1,44 @@
+<!-- 
+ /**
+ * Execution Context
+ * 
+ * - Execution Context는 실행하려는 JS코드와 코드를 실행할 때 필요한 정보를 담고 있는
+ *   특수한 환경이다. 코드 실행에 필요한 모든 데이터를 들고 있는 환경이라고 생각하면 된다.
+ * - Execution Context는 크게 두개로 나뉘어 진다.
+ *      . Global Context -> 최상위 Execution Context다. 코드를 실행하면 무조건 생성되는
+ *                          context로 웹에서의 window객체나 nodeJS에서의 golbal객체를 생성하고
+ *                          들고있는다.
+ *      . Function Context -> 함수가 실행될 때마다 함수별로 실행되는 context다. 함수 실행에 대한
+ *                            모든 정보를 갖고 있는다.
+ */ 
+ -->
+
+<!-- 
+ /**
+ * Memory Heap & Call Stack
+ * 
+ * JS는 기본적으로 싱글쓰레드 방식임. (여러개 사용하도록 할 수도 있으나, 관련 작업을 해줘야 함)
+ * 싱글쓰레드 안에는 하나의 Memory Heap과 하나의 Call Stack(Execution Context Stack)이 있다.
+ */ 
+ -->
+
+<script>
+    function one() {
+        console.log('run 1');
+        console.log('run 1 finished');
+    }
+
+    function two() {
+        console.log('run 2');
+        one();
+        console.log('run 2 finished');
+    }
+
+    function three() {
+        console.log('run 3');
+        two();
+        console.log('run 3 finished')
+    }
+
+    three();
+</script>
