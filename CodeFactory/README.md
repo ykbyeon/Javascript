@@ -1,5 +1,5 @@
 ### 레포지토리
-> https://github.com/codefactory-co/jav...
+> https://github.com/codefactory-co/javascript-full-tutorial-2023
 <BR/>
 
 ### 강의영상 Youtube
