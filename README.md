@@ -13,8 +13,8 @@
 
 ### [ node.js ]
 #### 1. 인강<br>
-- [[유튜브] https://www.youtube.com/playlist?list=PLuHgQVnccGMA9QQX5wqj6ThK7t2tsGxjm <br>
-	. 심화 : https://www.youtube.com/playlist?list=PLSK4WsJ8JS4cQ-niGNum4bkK_THHOizTs
+- [[유튜브] 기초학습 - Node.js (생활코딩)](https://www.youtube.com/playlist?list=PLuHgQVnccGMA9QQX5wqj6ThK7t2tsGxjm)   
+- [[유튜브] 심화학습 - [Node.js] 백엔드 맛보기 (우리밋)](https://www.youtube.com/playlist?list=PLSK4WsJ8JS4cQ-niGNum4bkK_THHOizTs)
 
 #### 2. 자료
 - [[공식사이트] Node.js documentation](https://nodejs.org/api/child_process.html)   
