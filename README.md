@@ -3,7 +3,8 @@
 
 ## [ Javascript ]
 > #### 1. 인강
-> - [🎬[유튜브] 기초학습 - WEB2-JavaScript (생활코딩)](https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf)   
+> - [🎬[유튜브] 기초학습 - WEB2-JavaScript (생활코딩)](https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf)
+> - [🎬[유튜브] Javascript 무료 풀강의 (코드팩토리)](https://www.youtube.com/watch?v=ZOVG7_41kJE)   
 
 > #### 2. 자료
 > - [모던 JavaScript 튜토리얼](https://ko.javascript.info/)
