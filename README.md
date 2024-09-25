@@ -15,7 +15,7 @@
 <br/>
 
 ## [ node.js ]
-> #### 1. 인강<br>
+> #### 1. 인강
 > - [🎬[유튜브] 기초학습 - WEB2-Node.js (생활코딩)](https://www.youtube.com/playlist?list=PLuHgQVnccGMA9QQX5wqj6ThK7t2tsGxjm)   
 > - [🎬[유튜브] 심화학습 - [Node.js] 백엔드 맛보기 (우리밋)](https://www.youtube.com/playlist?list=PLSK4WsJ8JS4cQ-niGNum4bkK_THHOizTs)
 
@@ -24,6 +24,8 @@
 > - [[이재홍 블로그] Node.js 기본 사용법](https://pyrasis.com/nodejs/nodejs-HOWTO#nodejs)   
 > - [[Inpa Dev 티스토리] Node.js정리](https://inpa.tistory.com/category/Node.js/Node) :+1:
 
-> #### 3. 예제<br>
+> #### 3. 예제
 > - [🎬[유튜브] 예제로 마스터하는 Node.js 25제 입문 (모든에듀 modenedu)](https://www.youtube.com/watch?v=6ibgkLecfe4&list=PLgaq5_GfIEnDMq3Z6CfwmUhe_OTPz1U7M)
 
+> #### 4. 도서
+> - [🔗[교보문고]Node.js 교과서 - 조현영저](https://product.kyobobook.co.kr/detail/S000200437346)   
