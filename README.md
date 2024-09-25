@@ -16,10 +16,10 @@
 	. 기초 : https://www.youtube.com/playlist?list=PLuHgQVnccGMA9QQX5wqj6ThK7t2tsGxjm <br>
 	. 심화 : https://www.youtube.com/playlist?list=PLSK4WsJ8JS4cQ-niGNum4bkK_THHOizTs
 
-#### 2. 자료<br>
-	. https://nodejs.org/api/child_process.html<br>
-	. https://pyrasis.com/nodejs/nodejs-HOWTO#nodejs<br>
-	. https://inpa.tistory.com/category/Node.js/Node<br>
+#### 2. 자료
+ https://nodejs.org/api/child_process.html
+ https://pyrasis.com/nodejs/nodejs-HOWTO#nodejs
+ https://inpa.tistory.com/category/Node.js/Node
 
 #### 3. 예제<br>
 [`유튜브 강의`](https://www.youtube.com/watch?v=6ibgkLecfe4&list=PLgaq5_GfIEnDMq3Z6CfwmUhe_OTPz1U7M)
