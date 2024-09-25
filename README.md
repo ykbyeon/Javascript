@@ -17,9 +17,9 @@
 	. 심화 : https://www.youtube.com/playlist?list=PLSK4WsJ8JS4cQ-niGNum4bkK_THHOizTs
 
 #### 2. 자료
- https://nodejs.org/api/child_process.html
- https://pyrasis.com/nodejs/nodejs-HOWTO#nodejs
- https://inpa.tistory.com/category/Node.js/Node
+[공식사이트 Node.js documentation](https://nodejs.org/api/child_process.html)   
+[(이재홍) Node.js 기본 사용법](https://pyrasis.com/nodejs/nodejs-HOWTO#nodejs)   
+[Inpa Dev티스토리(Node.js정리)](https://inpa.tistory.com/category/Node.js/Node)   
 
 #### 3. 예제<br>
-[`유튜브 강의`](https://www.youtube.com/watch?v=6ibgkLecfe4&list=PLgaq5_GfIEnDMq3Z6CfwmUhe_OTPz1U7M)
+[유튜브 강의](https://www.youtube.com/watch?v=6ibgkLecfe4&list=PLgaq5_GfIEnDMq3Z6CfwmUhe_OTPz1U7M)   
