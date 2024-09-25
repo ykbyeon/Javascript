@@ -22,10 +22,4 @@
 	. https://inpa.tistory.com/category/Node.js/Node<br>
 
 #### 3. 예제<br>
-	[유튜브 강의](https://www.youtube.com/watch?v=6ibgkLecfe4&list=PLgaq5_GfIEnDMq3Z6CfwmUhe_OTPz1U7M)
- 
-
-
-[a novel](https://en.wikipedia.org/wiki/The_Milagro_Beanfield_War_%28novel%29)
-
-<a href="https://en.wikipedia.org/wiki/The_Milagro_Beanfield_War_(novel)">a novel</a>
+[유튜브 강의](https://www.youtube.com/watch?v=6ibgkLecfe4&list=PLgaq5_GfIEnDMq3Z6CfwmUhe_OTPz1U7M)
