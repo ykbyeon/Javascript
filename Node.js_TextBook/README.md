@@ -1,6 +1,6 @@
 ## Node.js 교과서 - 기본기에 충실한 Node.js 18 입문서 | 3 판
 - :link:[교보문고](https://product.kyobobook.co.kr/detail/S000200437346)  ( 저자 : [조현영](https://www.kyobobook.co.kr/service/profile/information?chrcCode=1000869802) )
-- GitHub : [https://github.com/zerocho](https://github.com/zerocho)
+- GitHub : [https://github.com/zerocho](https://github.com/zerocho/nodejs-book)
 <BR/>
 
 <!-- 이미지 사이즈 조정 불가
