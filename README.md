@@ -22,4 +22,4 @@
 	. https://inpa.tistory.com/category/Node.js/Node<br>
 
 #### 3. 예제<br>
-[유튜브 강의](https://www.youtube.com/watch?v=6ibgkLecfe4&list=PLgaq5_GfIEnDMq3Z6CfwmUhe_OTPz1U7M)
+[`유튜브 강의`](https://www.youtube.com/watch?v=6ibgkLecfe4&list=PLgaq5_GfIEnDMq3Z6CfwmUhe_OTPz1U7M)
