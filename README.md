@@ -1,8 +1,9 @@
 ### 자바스크립트 및 node.js 자료
 ### [ Javascript ]
 #### 1. 인강
-	<a href="https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf"> https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf <a>
-
+	https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf
+ 
+ 
 #### 2. 자료
 	. https://ko.javascript.info/
 
