@@ -27,3 +27,5 @@ class Zero extends Human {
 const newZero = new Zero('human', 'Zero', 'Cho');
 Human.isHuman(newZero);// true
 console.log(Human.isHuman(newZero));
+
+//GitHub 테스트 입니다.
