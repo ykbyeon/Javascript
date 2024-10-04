@@ -1,5 +1,5 @@
-//const condition = true; //true이면 resolve, false이면 reject
-const condition = false;
+const condition = true; //true이면 resolve, false이면 reject
+// const condition = false;
 
 const promise = new Promise((resolve, reject) => {
     if (condition) {
@@ -42,3 +42,5 @@ promise
     .catch(error => {
         console.error(error);
     });
+
+    
