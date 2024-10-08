@@ -2,6 +2,7 @@
  * Callback
  * 
  * 콜백함수 : 특정 작업이 끝나고서 다시 불리는 함수. 즉 정의가 되고나서 바로 수행되지 않는다.
+ *          ※ 콜백 : 다시 불리다...
  */
 function waitAndRun() {
     setTimeout(() => {
@@ -11,10 +12,10 @@ function waitAndRun() {
 
 //waitAndRun();
 
-function waitAndRun2() {
+function waitAndRun2() { 
     setTimeout(() => {
         console.log('1번 콜백 끝');
-        setTimeout(() => {
+        setTimeout(() => { 
             console.log('2번 콜백 끝');
             setTimeout(() => {
                 console.log('3번 콜백 끝');
