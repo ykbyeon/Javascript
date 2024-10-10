@@ -12,7 +12,20 @@ const fnSimpleTest = (fn) => {
     }
 }
 
-const fnPromiseTest = async (fn) => {
+// const fnPromiseTest = async (fn) => {
+//     const p = new Promise((resolve, reject) => {
+//         if (true) {
+//             if (fn) {
+//                 fn('async 입니다. ');
+//             }
+//             resolve("Done 입니다. ");
+//         }
+//     });
+
+//     return p;
+// }
+
+const fnPromiseTest = (fn) => {
     const p = new Promise((resolve, reject) => {
         if (true) {
             if (fn) {
@@ -25,8 +38,14 @@ const fnPromiseTest = async (fn) => {
     return p;
 }
 
+//fnSimpleTest(justCallback);
+
 const pp = fnPromiseTest(justCallback);
 console.log(`PP IS : ${pp}`);
 pp.then((v) => console.log(v));
 
+
+
+console.log('\n-----Simple Start-----')
 fnSimpleTest(justCallback);
+console.log('-----Simple End-----\n')

@@ -4,14 +4,14 @@
 const getPromise = (seconds) => new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve('완료');
-    }, seconds);
+    }, seconds * 1000 );
 });
 
 // async, await를 사용하면, 비동기 프로그래밍을 하지 않는 것처럼 비동기 프로그래밍을 할 수 있다.
 // await는 promise에만 사용할 수 있다!!! (Promise로 만든 함수에만 사용 가능함.)
 async function runner() {   // 함수선언을 할 때, 앞에 async를 넣어주면 async함수가 된다.
     // async함수 내에서는 await를 실행할 수 있다.
-    const result1 = await getPromise(1);    // await를 이용해 수행한 함수의 결과값 받는 법(일반적인 함수의 결과 받드시 하면됨)
+    const result1 = await getPromise(10);    // await를 이용해 수행한 함수의 결과값 받는 법(일반적인 함수의 결과 받드시 하면됨)
     // await를 쓰면 await한 함수가 끝날 때 까지 다음 코드가 수행되지 않지만,
     // thread를 막고 있지 않는다. 즉, 다른 함수가 실행 될 수 있다.
     console.log('runner1-result1');
