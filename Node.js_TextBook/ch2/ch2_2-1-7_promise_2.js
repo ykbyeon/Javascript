@@ -15,3 +15,23 @@ function findAndSaveUser(Users) {
 
     });
 };
+
+// let A = { gender: 'm', name : 'YK.Byeon'};
+
+// findAndSaveUser();
+// findAndSaveUser(A);
+
+function findAndSaveUser_promise(Users) {
+    Users.findOne({})
+        .then(user => {
+            user.name = 'zero';
+            user.save();
+        })
+        .then(user => {
+            Users.findOne({ gender: 'm'});
+        })
+        .then(user => {
+            //생략
+        })
+        .catch(err => console.error(err))
+};
