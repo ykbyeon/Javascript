@@ -73,9 +73,9 @@ myPromise
 foo and bar 1  and bar again 2 and again 3 and again 4
 ```
 </details>
+
 #### 3. 활용방법
 - [(MDN) Using promises](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises)
-
 <br/>
 <br/>
 
