@@ -45,11 +45,11 @@ Promise Fail Logic
 sync Process 1
 sync Process 2
 Fail
-foo and bar 1  and bar again 2 and again 3 and again 4
 ```
 <br/>
    
-- .catch 는 .then( undefined, failureCallback) 와 동일
+- .then() 여러번 사용하여 여러개의 콜백을 추가 할 수 있으며, 각각의 콜백은 주어진 순서대로 하나 하나 실행
+  ※ 성능상 좋지 않으며, 가능한 하나의 핸들러 내에서 수행토록 작성
 ```
 myPromise
   .then((value) => `${value} and bar 1 `)
@@ -62,6 +62,11 @@ myPromise
   .catch((err) => {
     console.error(err);
   });
+```
+
+```
+========== [Result] ==========
+foo and bar 1  and bar again 2 and again 3 and again 4
 ```
 <br/>
 <br/>
