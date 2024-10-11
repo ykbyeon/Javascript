@@ -17,6 +17,7 @@
 #### 2. 문법구조
 - resolve, reject 매개변수를 갖는 콜백함수를 구현하며 생성
 - 객체 생성 시점에 내부 프로세스는 수행되며, 결과값 Return만 .then / .catch 메소드 호출 시점에 수행됨
+- .catch 는 .then( undefined, failureCallback) 와 동일
 ```javascript
 const promise1 = new Promise((resolve, reject) => {
     if (false) {
@@ -46,7 +47,9 @@ sync Process 2
 Fail
 foo and bar 1  and bar again 2 and again 3 and again 4
 ```
-
+<br/>
+   
+- .catch 는 .then( undefined, failureCallback) 와 동일
 ```
 myPromise
   .then((value) => `${value} and bar 1 `)
