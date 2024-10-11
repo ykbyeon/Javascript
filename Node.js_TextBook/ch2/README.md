@@ -135,3 +135,44 @@ console.log('sync13');
 console.log('sync14');
 console.log('sync15');
 ```
+
+```
+========== [Result] ==========
+sync1
+sync2
+sync3
+sync4
+sync5
+for loop sync : 0
+for loop sync : 1
+for loop sync : 2
+for loop sync : 3
+for loop sync : 4
+for loop sync : 5
+for loop sync : 6
+for loop sync : 7
+for loop sync : 8
+for loop sync : 9
+sync6
+sync7
+sync8
+sync9
+sync10
+sync11
+sync12
+sync13
+sync14
+sync15
+Success1
+for loop sync@fnPromise : 0
+for loop sync@fnPromise : 1
+for loop sync@fnPromise : 2
+for loop sync@fnPromise : 3
+for loop sync@fnPromise : 4
+for loop sync@fnPromise : 5
+for loop sync@fnPromise : 6
+for loop sync@fnPromise : 7
+for loop sync@fnPromise : 8
+for loop sync@fnPromise : 9
+Success2
+```
