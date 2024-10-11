@@ -1,10 +1,12 @@
 ## Promise & Async, Await
 ### [ Promise ]
-> #### 1. 용도   
-> - 실행은 바로하고, 결과값 (resolve, reject)은 나중에 Return 받는 비동기 방식 수행 객체
-> - 결과값은 실행 완료 후, then/catch로 받는다
-> - 기본적으로 1 Process, 1 Thread로 실행되는 JavaScript언어에서,   
->   비동기 방식으로 수행되는 코드 작성을 위해
+#### 1. 용도   
+- 실행은 바로하고, 결과값 (resolve, reject)은 나중에 Return 받는 비동기 방식 수행 객체
+- 결과값은 실행 완료 후, then/catch로 받는다
+- 기본적으로 1 Process, 1 Thread로 실행되는 JavaScript언어에서,   
+  비동기 방식으로 수행되는 코드 작성을 위해 사용함.   
+  (setTimeout 함수를 이용한 구현시 발생하는 Callback-Hell 문제를 해결하기 위해 나온 신규 문법)
+
 > #### 2. 문법구조
 > - df
 > - df
