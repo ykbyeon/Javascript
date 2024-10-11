@@ -1,5 +1,5 @@
-## Promise & Async, Await
-### [ Promise ]
+# Promise & Async, Await
+## [ Promise ]
 #### 1. 용도   
 - 실행은 바로하고, 결과값 (resolve, reject)은 나중에 Return 받는 비동기 방식 수행 객체
 - 결과값은 실행 완료 후, then/catch로 받는다
@@ -77,10 +77,47 @@ foo and bar 1  and bar again 2 and again 3 and again 4
 
 #### 3. 활용방법
 - [(MDN) Using promises](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises)
+- [자바스크립트 프로미스 이해하기: 작동원리 완전분석](https://vincentb.tistory.com/entry/자바스크립트-프로미스-이해하기-작동-원리-완전-분석Javascript-Promise-A-to-Z)
+- **Chaining**
+  - Promise의 가장 뛰어난 장점 중 하나!
+  - **Chaining after a catch**   
+    chain에서 작업이 실패한 후에도 새로운 작업을 수행하는 것이 가능하며 매우 유용
+    
+```js
+new Promise((resolve, reject) => {
+  console.log("Initial");
+
+  resolve();
+})
+  .then(() => {
+    throw new Error("Something failed");
+    console.log("Do this");
+  })
+  .catch(() => {
+    console.log("Do that");
+  })
+  .then(() => {
+    console.log("Do this, whatever happened before");
+  });
+```
+
+<details>
+<summary>========== [Result] ==========</summary>
+  
+```
+Initial
+Do that
+Do this, whatever happened before
+```
+> ```
+> 참고: "Do this" 텍스트가 출력되지 않은 것에 주의!   
+>       "Something failed" 에러가 rejection을 발생시켰기 때문임.
+> ```
+</details> 
 <br/>
 <br/>
 
-### [ Async, Await ]
+## [ Async, Await ]
 #### 1. 용도   
 - Promise를 활용하여 비동기 방식 구현 시 Callback-Hell 구조를 개선 했지만, 여전히 코드가 길어지는 문제가 존재.   
   이를 해결하기 위해 새롭게 등장한 문법
