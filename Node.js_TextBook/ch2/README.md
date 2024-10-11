@@ -18,7 +18,7 @@
 - resolve, reject 매개변수를 갖는 콜백함수를 구현하며 생성
 - 객체 생성 시점에 내부 프로세스는 수행되며, 결과값 Return만 .then / .catch 메소드 호출 시점에 수행됨
 - .catch 는 .then( undefined, failureCallback) 와 동일
-```javascript
+```js
 const promise1 = new Promise((resolve, reject) => {
     if (false) {
         console.log('Promise True Logic');
@@ -50,7 +50,7 @@ Fail
    
 - .then() 여러번 사용하여 여러개의 콜백을 추가 할 수 있으며, 각각의 콜백은 주어진 순서대로 하나 하나 실행   
   ※ 성능상 좋지 않으며, 가능한 하나의 핸들러 내에서 수행토록 작성
-```
+```js
 myPromise
   .then((value) => `${value} and bar 1 `)
   .then((value) => `${value} and bar again 2`)
@@ -85,7 +85,7 @@ foo and bar 1  and bar again 2 and again 3 and again 4
 - [(MDN) async function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function)
 
 #### 3. 활용방법
-```javascript
+```js
 const promise1 = Promise.resolve('Success1');
 const promise2 = Promise.resolve('Success2');
 
