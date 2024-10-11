@@ -6,10 +6,15 @@
 - 기본적으로 싱글스레드로 실행되는 JavaScript언어에서,   
   비동기 방식으로 수행되는 코드 작성을 위해 사용함.   
   (setTimeout 함수를 이용한 구현시 발생하는 Callback-Hell 문제를 해결하기 위해 나온 신규 문법)
+- [(MDN)Promise설명](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- 3개의 상태가 존재   
+  - 대기(pending): 이행하지도, 거부하지도 않은 초기 상태.   
+  - 이행(fulfilled): 연산이 성공적으로 완료됨.   
+  - 거부(rejected): 연산이 실패함.
+  ![image](https://github.com/user-attachments/assets/fbc75d00-dec4-4b27-b01e-1868fcc9d4d5)
+
 
 #### 2. 문법구조
-- [(MDN)Promise설명](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)   
-  ![image](https://github.com/user-attachments/assets/fbc75d00-dec4-4b27-b01e-1868fcc9d4d5)
 
 - df
 ```javascript
