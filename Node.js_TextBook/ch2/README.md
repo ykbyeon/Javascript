@@ -38,18 +38,20 @@ promise1.then((msg) => {
     console.log(err);
 });
 ```
+<details>
+<summary>========== [Result] ==========</summary>
 
 ```
-========== [Result] ==========
 Promise Fail Logic
 sync Process 1
 sync Process 2
 Fail
 ```
+</details>
 <br/>
    
 - .then() 여러번 사용하여 여러개의 콜백을 추가 할 수 있으며, 각각의 콜백은 주어진 순서대로 하나 하나 실행   
-  ※ 성능상 좋지 않으며, 가능한 하나의 핸들러 내에서 수행토록 작성
+     ※ 성능상 좋지 않으며, 가능한 하나의 핸들러 내에서 수행토록 작성
 ```js
 myPromise
   .then((value) => `${value} and bar 1 `)
@@ -64,10 +66,13 @@ myPromise
   });
 ```
 
+<details>
+<summary>========== [Result] ==========</summary>
+  
 ```
-========== [Result] ==========
 foo and bar 1  and bar again 2 and again 3 and again 4
 ```
+</details>
 #### 3. 활용방법
 - [(MDN) Using promises](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises)
 
@@ -136,8 +141,11 @@ console.log('sync14');
 console.log('sync15');
 ```
 
+
+<details>
+<summary>========== [Result] ==========</summary>
+  
 ```
-========== [Result] ==========
 sync1
 sync2
 sync3
@@ -176,3 +184,4 @@ for loop sync@fnPromise : 8
 for loop sync@fnPromise : 9
 Success2
 ```
+</details>
