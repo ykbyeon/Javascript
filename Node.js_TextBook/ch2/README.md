@@ -78,30 +78,60 @@ foo and bar 1  and bar again 2 and again 3 and again 4
 #### 1. 용도   
 - Promise를 활용하여 비동기 방식 구현 시 Callback-Hell 구조를 개선 했지만, 여전히 코드가 길어지는 문제가 존재.   
   이를 해결하기 위해 새롭게 등장한 문법
-
+- 함수 선언 시 async 사용
+- async 함수의 반환값은 항상 Promise로 감싸져서 반환됨.
 
 #### 2. 문법구조
-
+- [(MDN) async function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function)
 
 #### 3. 활용방법
+```javascript
+const promise1 = Promise.resolve('Success1');
+const promise2 = Promise.resolve('Success2');
+
+(async () => {
+    for await (promise of [promise1, promise2]) {
+        console.log(promise);
+    }
+})();
 
 
-<!--
-## [ Javascript ]
-> #### 1. 인강
-> - [🎬[유튜브] 기초학습 - WEB2-JavaScript (생활코딩)](https://www.youtube.com/playlist?list=PLuHgQVnccGMBB348PWRN0fREzYcYgFybf)
-> - [🎬[유튜브] Javascript 무료 풀강의 (코드팩토리)](https://www.youtube.com/watch?v=ZOVG7_41kJE)   
+console.log('sync1');
+console.log('sync2');
+console.log('sync3');
+console.log('sync4');
+console.log('sync5');
 
-> #### 2. 자료
-> - [모던 JavaScript 튜토리얼](https://ko.javascript.info/)
+(async () => {
+    for (let i = 0; i < 10; i++) {
+        console.log(`for loop sync : ${i}`);
+    }
+})();
 
-> #### 3. 예제
-> - [🎬[유튜브] 코딩테스트 스터디, 문제풀이 (코딩문)](https://www.youtube.com/playlist?list=PL3xNAKVIm80KhJzoz0N5VPROJq3IoLBIW)   
-<br/>
-<br/>
+console.log('sync6');
+console.log('sync7');
+console.log('sync8');
+console.log('sync9');
+console.log('sync10');
 
-## [ node.js ]
-> #### 1. 인강
-> - [🎬[유튜브] 기초학습 - WEB2-Node.js (생활코딩)](https://www.youtube.com/playlist?list=PLuHgQVnccGMA9QQX5wqj6ThK7t2tsGxjm)   
-> - [🎬[유튜브] 심화학습 - [Node.js] 백엔드 맛보기 (우리밋)](https://www.youtube.com/playlist?list=PLSK4WsJ8JS4cQ-niGNum4bkK_THHOizTs)
--->
+const fn = () => {
+    for (let i = 0; i < 10; i++) {
+        console.log(`for loop sync@fnPromise : ${i}`);
+    }
+};
+
+const fnPromise = async () => {
+    const p = new Promise((resolve, reject) => {
+        resolve(fn);
+    })
+    return p;
+};
+
+fnPromise().then(f => { f(); });
+
+console.log('sync11');
+console.log('sync12');
+console.log('sync13');
+console.log('sync14');
+console.log('sync15');
+```
