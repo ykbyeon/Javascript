@@ -71,7 +71,21 @@ foo and bar 1  and bar again 2 and again 3 and again 4
 #### 3. 활용방법
 - [(MDN) Using promises](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises)
 
-- 
+<br/>
+<br/>
+
+### [ Async, Await ]
+#### 1. 용도   
+- Promise를 활용하여 비동기 방식 구현 시 Callback-Hell 구조를 개선 했지만, 여전히 코드가 길어지는 문제가 존재.   
+  이를 해결하기 위해 새롭게 등장한 문법
+
+
+#### 2. 문법구조
+
+
+#### 3. 활용방법
+
+
 <!--
 ## [ Javascript ]
 > #### 1. 인강
