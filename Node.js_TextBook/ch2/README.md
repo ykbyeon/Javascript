@@ -1,12 +1,10 @@
 # Table Of Contents
 
-[Promise & Async, Await](#section1)
-
+**[Promise & Async, Await]**
 > 1. [Promise](#promise)
 > 2. [Async, Await](#async_await)
 
-[Arrow Function](#section2)
-
+**[Arrow Function]**
 > 1. [화살표 함수](#arrowfunc)
 
 <br/>
@@ -14,8 +12,6 @@
 -----
 <br/>
 
-
-<a name="#section1" />
 # Promise & Async, Await
 
 <a name="promise" />
@@ -252,7 +248,6 @@ Success2
 -----
 <br/>
 
-<a name="#section2" />
 
 # Arrow Function(화살표 함수)
 
