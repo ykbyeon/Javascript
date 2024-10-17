@@ -1,12 +1,12 @@
 #### Table of Contents
 
-[Promise & Async, Await](#promise-async-await)
+[Promise & Async, Await](#promise_async_await)
 1. [Promise](#promise)
 2. [Async, Await](#async_await)
 
 -----
 
-<a name="#PromiseAsyncAwait" />
+<a name="#promise_async_await" />
 
 # Promise & Async, Await
 
