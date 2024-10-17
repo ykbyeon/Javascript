@@ -22,6 +22,8 @@ const a = '0';
 console.log(a);
 
 console.log("==============================");
+
+
 {
     const a = {};
     console.log(a.b);   //undefined
@@ -34,10 +36,28 @@ console.log("==============================");
 
     console.log("==============================");
     //c.d;
+    /*
     try {
         c.d;
     } catch (e) {
-        //console.log(e); //TypeError: Cannot read properties of null (reading 'd')
+        console.log(e); //TypeError: Cannot read properties of null (reading 'd')
+    }
+
+    try {
+        c.f();      // TypeError: Cannot read properties of null (reading 'f')
+        //c?.f();     // 문제없음
+    } catch (e) {
+        console.error(e);
+    }
+    */
+
+
+    try {
+        //c[0];   // TypeError: Cannot read properties of null (reading '0')
+        c?.[0];     // 문제없음
+        console.log(c?.[0]);
+    } catch (e) {
+        console.error(e);
     }
 
 }

@@ -1,0 +1,62 @@
+<!-- 
+    AJAX (Asynchronous Javascript And XML)
+    페이지 이동없이 서버에 요청을 보내고 응답을 받는 기술
+    XML만 사용해야하는 것은 아니며, 최근에는 JSON을 많이 사용하고 있음
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.get('https://www.zerocho.com/api/get')
+        .then((result) => {
+            console.log(result);
+            console.log("=================");
+            console.log(result.data);   // {}
+        })
+        .catch((error) => {
+            console.error(error);
+            //console.log(error);
+        });
+    console.log('==============================================================');
+    (async () => {
+        try {
+            const result = await axios.get('https://www.zerocho.com/api/get');
+            console.log(result);
+            console.log("=================");
+            console.log(result.data);   //{}
+        } catch (error) {
+            console.error(error);
+            //console.log(error);
+        }
+    })();
+
+    console.log('=== POST ===========================================================');
+
+    (async () => {
+        try {
+            const result = await axios.post('https://www.zerocho.com/api/post/json',{
+                name: 'zerocho',
+                birth: 1994,
+            });
+            console.log(result);
+            console.log(result.data);
+        } catch (error) {
+            console.error(error);
+            //console.log(error);
+        }
+    })();
+</script>
+
+</html>
