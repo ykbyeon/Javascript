@@ -257,5 +257,15 @@ Success2
 
 ## [ 화살표 함수 ]
 #### 1. 용도   
-- 실행은 바로하고, 결과값 (resolve, reject)은 나중에 Return 받는 비동기 방식 수행 객체
-- 결과값은 실행 완료 후, then/catch로 받는다
+- dfkdfklfdaf
+- dfdfadaf
+
+
+
+# Table Of Contents
+[Promise & Async, Await](#section_promise_async_await)
+> 1. [Promise](#promise)
+> 2. [Async, Await](#async_await)
+  
+[Arrow Function](#section_arrow)
+> 1. [화살표 함수](#arrow_function)
