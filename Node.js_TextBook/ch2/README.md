@@ -1,9 +1,7 @@
 # Table Of Contents
-
 [Promise & Async, Await](#promise_async_await)
 > 1. [Promise](#promise)
 > 2. [Async, Await](#async_await)
-
 <br/>
 <br/>
 
