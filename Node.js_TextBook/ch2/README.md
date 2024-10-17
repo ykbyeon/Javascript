@@ -258,13 +258,3 @@ Success2
 - dfkdfklfdaf
 - dfdfadaf
 
-
-
-# Table Of Contents
-
-[Promise & Async, Await](#section1)
-> 1. [Promise](#promise)
-> 2. [Async, Await](#async_await)
-
-[Arrow Function](#section2)
-> 1. [화살표 함수](#arrowfunc)
