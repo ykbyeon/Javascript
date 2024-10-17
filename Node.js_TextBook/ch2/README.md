@@ -1,19 +1,17 @@
 # Table Of Contents
-[Promise & Async, Await](#promise_async_await)
+[Promise & Async, Await](#section_promise_async_await)
 > 1. [Promise](#promise)
 > 2. [Async, Await](#async_await)
-<br/>
-
-[Arrow Function](#arrow)
+  
+[Arrow Function](#section_arrow)
 > 1. [화살표 함수](#arrow_function)
 
-<br/>
 <br/>
 
 -----
 <br/>
 
-<a name="#promise_async_await" />
+<a name="#section_promise_async_await" />
 
 # Promise & Async, Await
 
@@ -246,8 +244,12 @@ Success2
 ```
 </details>
 
+<br/>
 
-<a name="#arrow" />
+-----
+<br/>
+
+<a name="#section_arrow" />
 
 # Arrow Function(화살표 함수)
 
