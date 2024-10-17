@@ -1,11 +1,13 @@
-#### Table of Contents
+# Table Of Contents
 
 [Promise & Async, Await](#promise_async_await)
-1. [Promise](#promise)
-2. [Async, Await](#async_await)
+> 1. [Promise](#promise)
+> 2. [Async, Await](#async_await)
+
+<br/>
+<br/>
 
 -----
-
 <a name="#promise_async_await" />
 
 # Promise & Async, Await
@@ -239,7 +241,3 @@ Success2
 ```
 </details>
 
-#### Table of Contents
-[Promise & Async, Await](##promise_async_await)
-1. [Promise](#promise)
-2. [Async, Await](#async_await)
