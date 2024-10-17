@@ -3,9 +3,16 @@
 > 1. [Promise](#promise)
 > 2. [Async, Await](#async_await)
 <br/>
+
+[Arrow Function](#arrow)
+> 1. [화살표 함수](#arrow_function)
+
+<br/>
 <br/>
 
 -----
+<br/>
+
 <a name="#promise_async_await" />
 
 # Promise & Async, Await
@@ -239,3 +246,14 @@ Success2
 ```
 </details>
 
+
+<a name="#arrow" />
+
+# Arrow Function(화살표 함수)
+
+<a name="arrow_function" />
+
+## [ 화살표 함수 ]
+#### 1. 용도   
+- 실행은 바로하고, 결과값 (resolve, reject)은 나중에 Return 받는 비동기 방식 수행 객체
+- 결과값은 실행 완료 후, then/catch로 받는다
