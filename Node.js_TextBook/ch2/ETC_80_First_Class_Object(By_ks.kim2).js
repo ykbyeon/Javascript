@@ -65,6 +65,7 @@ console.log(fnO.getDesc());
 /**
  * High Order Function
  */
+console.log("======= High Order Function =======")
 
 const fnCall = (fn, num) => {
     let result;
@@ -99,3 +100,5 @@ const vv = fnArr.reduce((r, f, idx, arr) => {
 let vvv = (initValue * initValue);
 vvv += vvv;
 console.log(vv, vvv);
+
+
