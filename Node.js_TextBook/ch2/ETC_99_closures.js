@@ -20,10 +20,20 @@ function fn02(n, a) {
     const getDesc = () => {
         return `name : ${name}, age : ${age}`;
     };
-    return Object.freeze({
+    //eturn Object.freeze({
+    return ({
         getDesc
     });
 };
+//return시에 Object.freeze()를 호출했는데,
+//왜 ()안의 범위를 벗어나 fn02까지 freeze가 되는지?
+//아래 확인 시 fn02까지 freeze되는 것은 아님.
+//return받은 객체 자체가 freeze되어, 그것에 대한 변경이 안되는 것.ㄴ
+
+console.log("=======================");
+//Object.freeze(fn02);
+console.log("fn02 frozen:" + Object.isFrozen(fn02));
+console.log("=======================");
 
 
 function getDesc() {
@@ -36,8 +46,18 @@ const b = new fn01("bbbb", 88);
 const c = fn02("변경불가", 99);
 const d = fn02("변경불가 그렇지만 .... ", 9);
 
+c.name = "변경시도";
+
+console.log("=======================");
+console.log("c frozen:" + Object.isFrozen(c));
+console.log("d frozen:" + Object.isFrozen(d));
+console.log("=======================");
+
 console.log(`A : ${a.getDesc()}, B : ${b.getDesc()} , C : ${c.getDesc()}, D : ${d.getDesc()}}`);
 
+
+
+console.log("=======================");
 
 const fnO = ((n, a) => {
     let name = n;
@@ -53,9 +73,11 @@ const fnO = ((n, a) => {
     };
 })('이름', 10);
 
-
+console.log("=======================");
 console.log(c, c.getDesc(), d.getDesc(), fnO.getDesc());
 
+
+console.log("=======================");
 fnO.setName("변경했어요 ...... ");
 console.log(fnO.getDesc());
 
