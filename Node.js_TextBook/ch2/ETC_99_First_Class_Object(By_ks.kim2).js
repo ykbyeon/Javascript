@@ -1,19 +1,26 @@
-function fn01 (name , age) {
+/**
+ * Closures
+ * 
+ * Lexical Environment
+ * 
+*/
+
+function fn01(name, age) {
     this.name = name;
     this.age = age;
 };
 
-fn01.prototype.getDesc = function() {
+fn01.prototype.getDesc = function () {
     return `FN01 :: ${this.name} , ${this.age}`;
 }
 
-function fn02 (n, a) {
+function fn02(n, a) {
     let name = n;
     let age = a;
     const getDesc = () => {
         return `name : ${name}, age : ${age}`;
     };
-    return Object.freeze( {
+    return Object.freeze({
         getDesc
     });
 };
@@ -29,7 +36,7 @@ const b = new fn01("bbbb", 88);
 const c = fn02("변경불가", 99);
 const d = fn02("변경불가 그렇지만 .... ", 9);
 
-console.log ( `A : ${a.getDesc()}, B : ${b.getDesc()} , C : ${c.getDesc()}, D : ${d.getDesc()}}`);
+console.log(`A : ${a.getDesc()}, B : ${b.getDesc()} , C : ${c.getDesc()}, D : ${d.getDesc()}}`);
 
 
 const fnO = ((n, a) => {
@@ -47,12 +54,19 @@ const fnO = ((n, a) => {
 })('이름', 10);
 
 
-console.log ( c, c.getDesc(), d.getDesc(), fnO.getDesc() );
+console.log(c, c.getDesc(), d.getDesc(), fnO.getDesc());
 
 fnO.setName("변경했어요 ...... ");
-console.log ( fnO.getDesc() );
+console.log(fnO.getDesc());
 
-const fnCall = (fn, num ) => {
+
+
+
+/**
+ * High Order Function
+ */
+
+const fnCall = (fn, num) => {
     let result;
     console.time("speed");
     result = fn(num);
@@ -61,27 +75,27 @@ const fnCall = (fn, num ) => {
 }
 
 const fn001 = (t) => {
-    return t*t;
+    return t * t;
 }
 
 const fn002 = (t) => {
-    return t+t;
+    return t + t;
 }
 
 const r1 = fnCall(fn001, 10);
-console.log ( r1 );
+console.log(r1);
 const r2 = fnCall(fn002, 10);
-console.log ( r2 );
+console.log(r2);
 
 const fnArr = [fn001, fn002];
 
 const initValue = 999;
-const vv = fnArr.reduce ( (r,f,idx,arr) => {
+const vv = fnArr.reduce((r, f, idx, arr) => {
     return f(r);
-},initValue);
+}, initValue);
 
 
 
-let vvv = (initValue*initValue);
+let vvv = (initValue * initValue);
 vvv += vvv;
-console.log ( vv, vvv );
+console.log(vv, vvv);
