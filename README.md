@@ -17,6 +17,7 @@
 ## [ node.js ]
 > #### 1. 인강
 > - [🎬[유튜브] 기초학습 - WEB2-Node.js (생활코딩)](https://www.youtube.com/playlist?list=PLuHgQVnccGMA9QQX5wqj6ThK7t2tsGxjm)   
+> &emsp; ※ [강의 개요 및 소스코드-생활코딩 Node.js](https://opentutorials.org/module/3549)
 > - [🎬[유튜브] 심화학습 - [Node.js] 백엔드 맛보기 (우리밋)](https://www.youtube.com/playlist?list=PLSK4WsJ8JS4cQ-niGNum4bkK_THHOizTs)
 
 > #### 2. 자료
