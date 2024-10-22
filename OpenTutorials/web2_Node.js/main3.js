@@ -8,32 +8,6 @@ var app = http.createServer(function (request, response) {
     var pathname = url.parse(_url, true).pathname;
     var title = queryData.id;
 
-    // console.log("=============");
-    // console.log(_url);
-    // console.log("-----");
-    // console.log(queryData);
-    // console.log("-----");
-    // console.log(queryData.id);
-    // console.log(queryData.name);
-    // console.log("=============");
-    // console.log("=============");
-    // console.log(url.parse(_url, true));
-    // console.log("=============");
-    // console.log(url.parse(_url, true).pathname);
-    // console.log("=============");
-
-
-    // if (_url == '/') {
-    //     //_url = '/index.html';
-    //     title = 'Welcome';
-    // }
-    // if (_url == '/favicon.ico') {
-    //     //return response.writeHead(404);
-    //     response.writeHead(404);
-    //     response.end();
-    //     return;
-    // }
-
     if (pathname === '/') { //pathname 만으로는 home과 각각의 페이지를 구분할 수 없다.
         if (queryData.id === undefined) {   //home과 각각의 페이지를 구분할 수 있는 구분자
             fs.readdir('./data', (error, filelist) => {
@@ -120,8 +94,6 @@ var app = http.createServer(function (request, response) {
         response.writeHead(404);
         response.end('Not found');
     }
-
     console.log(__dirname + _url);
-    //response.end(fs.readFileSync(__dirname + _url));
 });
 app.listen(3000);
