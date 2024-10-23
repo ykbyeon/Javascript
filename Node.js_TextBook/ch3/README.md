@@ -26,7 +26,7 @@ if (isMainThread) {
 
 Worker Threads는 Node.js 애플리케이션의 성능과 반응성을 향상시키는 데 매우 유용하며, 특히 이미지 처리, 대규모 데이터 처리, 복잡한 수학 계산 등 CPU 집약적인 작업에 적합합니다[4][5].
 
-Citations:
+**Citations:**   
 [1] https://cloudsoswift.github.io/post/develop/nodejs/about-thread-of-node-js/   
 [2] https://velog.io/@elon/Node.js-Worker-threads-%EC%82%AC%EC%9A%A9%EB%B2%95   
 [3] https://inpa.tistory.com/entry/NODE-%F0%9F%93%9A-workerthreads-%EB%AA%A8%EB%93%88   
