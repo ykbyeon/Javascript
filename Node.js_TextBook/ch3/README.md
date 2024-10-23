@@ -1,3 +1,4 @@
+# Worker Threads
 Node.js의 **Worker Threads**는 JavaScript 코드를 병렬로 실행할 수 있도록 해주는 모듈입니다. 이 모듈은 Node.js의 단일 스레드 모델의 한계를 극복하기 위해 도입되었습니다. 기본적으로 Node.js는 단일 스레드 기반의 비동기 I/O 모델을 사용하지만, CPU 집약적인 작업을 처리할 때는 이 모델이 비효율적일 수 있습니다. Worker Threads를 사용하면 이러한 작업을 별도의 스레드에서 처리할 수 있어 성능을 향상시킬 수 있습니다[1][2][4].
 
 ## **Worker Threads의 주요 특징**
