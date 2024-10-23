@@ -57,7 +57,7 @@ Node.js의 **Worker Threads**는 멀티 프로세스 방식과는 다릅니다. 
 따라서, Node.js의 Worker Threads는 멀티 프로세스와 유사한 방식으로 작동하지만, 실제로는 멀티스레딩을 구현하는 방법 중 하나로 볼 수 있습니다. CPU 집약적인 작업을 처리할 때 유용하며, Node.js의 단일 스레드 모델의 한계를 보완하는 데 사용됩니다.
 
 ## **참고할만한 사이트**
-- [Node.js가 싱글 스레드로 불리는 정확한 이유는?](https://helloinyong.tistory.com/350)
+- [Node.js가 싱글 스레드로 불리는 정확한 이유는?](https://helloinyong.tistory.com/350) :+1:
   <img src="https://github.com/user-attachments/assets/458cbc0a-7a38-49f8-a993-8f4b81ea6139" width="750">
   
 **Citations:**  
