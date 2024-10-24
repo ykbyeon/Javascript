@@ -6,7 +6,7 @@ const getVersion = () => {
 
 const queryMap = new Map();
 
-queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL', 
+queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL',
     `
     SELECT A.ID, A.TITLE, B.TEST_ID, B.CONTENTS, A.CREATE_DATE, B.CREATE_DATE AS DTL_CREATE_DATE
     FROM ( SELECT * FROM ODIS_TEST_MST WHERE ID LIKE CONCAT('%',?,'%') AND TITLE LIKE CONCAT('%',?,'%')    ) A
@@ -17,7 +17,7 @@ queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL',
 );
 
 
-queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL_ALL', 
+queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL_ALL',
     `
     SELECT A.ID, A.TITLE, B.TEST_ID, B.CONTENTS, A.CREATE_DATE, B.CREATE_DATE AS DTL_CREATE_DATE
     FROM ( SELECT * FROM ODIS_TEST_MST WHERE ID LIKE CONCAT('%',?,'%') ) A
@@ -28,7 +28,7 @@ queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL_ALL',
     `
 );
 
-queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL_BY_ID', 
+queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL_BY_ID',
     `
     SELECT A.ID, A.TITLE, B.TEST_ID, B.CONTENTS, A.CREATE_DATE, B.CREATE_DATE AS DTL_CREATE_DATE
     FROM (
@@ -42,7 +42,7 @@ queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL_BY_ID',
     `
 );
 
-queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL_IN_SQL', 
+queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL_IN_SQL',
     `
     SELECT A.ID, A.TITLE, B.TEST_ID, B.CONTENTS, A.CREATE_DATE, B.CREATE_DATE AS DTL_CREATE_DATE
     FROM (
@@ -58,13 +58,13 @@ queryMap.set('SELECT_ODIS_TEST_MST_JOIN_DTL_IN_SQL',
 
 
 
-queryMap.set("INSERT_ODIS_TEST_MST", 
+queryMap.set("INSERT_ODIS_TEST_MST",
     `
     INSERT INTO ODIS_TEST_MST (ID, TITLE, CREATE_DATE) VALUES (?, ?, now())
     `
 );
 
-queryMap.set("INSERT_ODIS_TEST_DTL", 
+queryMap.set("INSERT_ODIS_TEST_DTL",
     `
     INSERT INTO ODIS_TEST_DTL (TEST_ID, CONTENTS ,ID, CREATE_DATE) VALUES (?, ?, ?, now())
     `
@@ -75,16 +75,16 @@ queryMap.set("INSERT_ODIS_TEST_DTL",
 
 const getQueryByID = (queryID) => {
 
-    if ( queryMap.has(queryID) ) {
+    if (queryMap.has(queryID)) {
         return queryMap.get(queryID);
     }
     return undefined;
 };
 
 const getDynamicQueryById = (queryID, params, replaceName) => {
-    if ( queryMap.has(queryID) ) {
+    if (queryMap.has(queryID)) {
         let result = queryMap.get(queryID);
-        if ( params && replaceName ) {
+        if (params && replaceName) {
             const partialSQL = sqlFn.makeParmeterSQL(params);
             result = sqlFn.makeTranslateDynamicSQL(result, replaceName, partialSQL);
         }
@@ -94,12 +94,12 @@ const getDynamicQueryById = (queryID, params, replaceName) => {
 };
 
 const getDynamicQueryByIdParams = (queryID, jsonParamValues) => {
-    if ( queryMap.has(queryID) ) {
+    if (queryMap.has(queryID)) {
         let result = queryMap.get(queryID);
-        if ( jsonParamValues && (typeof jsonParamValues) === 'object' ) {
+        if (jsonParamValues && (typeof jsonParamValues) === 'object') {
             const transJson = {};
-            for ( let v of Object.keys(jsonParamValues)) {
-                let partialSQL = sqlFn.makeParmeterSQL( jsonParamValues[v]);
+            for (let v of Object.keys(jsonParamValues)) {
+                let partialSQL = sqlFn.makeParmeterSQL(jsonParamValues[v]);
                 transJson[v] = partialSQL;
             }
             result = sqlFn.makeTranslateDynamicSQLValues(result, transJson);
@@ -111,9 +111,9 @@ const getDynamicQueryByIdParams = (queryID, jsonParamValues) => {
 
 
 const getDynamicQueryByIdValues = (queryID, jsonParamValues) => {
-    if ( queryMap.has(queryID) ) {
+    if (queryMap.has(queryID)) {
         let result = queryMap.get(queryID);
-        if ( jsonParamValues && (typeof jsonParamValues) === 'object' ) {
+        if (jsonParamValues && (typeof jsonParamValues) === 'object') {
             result = sqlFn.makeTranslateDynamicSQLValues(result, jsonParamValues);
         }
         //console.log ( "Full Query : " , result );
