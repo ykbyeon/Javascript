@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/main.css" rel="stylesheet" />
+</head>
+<body>
+<!-- 전체 영역 -->
+<div class="def_padding_top">
+
+    <!-- 상단 영역 -->
+    <%- include('../includes/header', infos ); %>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="content">
+        <!-- 배너 영역 -->
+        <section class="banner">
+            <hr class="banner__img"/>
+        </section>
+
+       
+        <!-- 컨텐츠 내용 전체 영역 -->
+        <div class="content__container">
+
+            <!-- 메인 컨텐츠 엘리먼트 -->
+            <section class="content__main">
+                <h2 class="content__main-title">About US</h2>
+            </section>
+            
+            <!-- 사이드 컨텐츠 엘리먼트 -->
+            <article class="content__side">
+                <h2 class="content__side-title">About</h2>
+                <p>About US</p>
+            </article>            
+        </div>
+
+    </main>
+
+
+  </div>   
+
+  <%- include('../includes/footer'); %>
+
+<script src="/js/mainMenu.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "name": "main_prj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "imports": {
+    "#core/*": "./core/*",
+    "#routes/*": "./routes/*",
+    "#sqls/*": "./sqls/*",
+    "#src/*": "./src/*",
+    "#controllers/*": "./src/controllers/*",
+    "#services/*": "./src/services/*",
+    "#dtos/*": "./src/dtos/*",
+    "#daos/*": "./src/daos/*"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-asyncify": "^3.1.0",
+    "helmet": "^8.0.0",
+    "iconv-lite": "^0.6.3",
+    "jsonwebtoken": "^9.0.2",
+    "mariadb": "^3.3.2",
+    "uuid": "^10.0.0"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
