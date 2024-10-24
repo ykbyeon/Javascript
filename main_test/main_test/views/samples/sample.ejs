@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/main.css" rel="stylesheet" />
+    <style>
+      H4 {
+        margin:2px;
+      }
+      .inputDefCls {
+          width:620px;
+          height:30px;
+          padding: 2px;
+          border:dotted 2px cyan;
+      }
+      .inputHalfCls {
+          width:300px;
+          height:30px;
+          padding: 2px;
+          border:dotted 2px cyan;
+      }
+
+      .inputSearchCls {
+          width:200px;
+          height:30px;
+          padding: 2px;
+          border:dotted 2px cyan;
+      }
+
+      .labelSearchCls {
+          display: inline-block;
+          width: 100px;
+          height: 30px;
+          padding : 2px;
+          font-size:14px;
+          text-align:center;
+          border:1px dotted cyan;
+      }
+
+      .labelDefCls {
+          display: inline-block;
+          width: 180px;
+          height: 30px;
+          padding : 2px;
+          font-size:14px;
+          text-align:center;
+          border:1px dotted cyan;
+      }
+      .inputDefCls[type=button] {
+          width: 804px;
+      }
+  </style>
+
+</head>
+<body>
+<!-- 전체 영역 -->
+<div class="def_padding_top">
+
+    <!-- 상단 영역 -->
+    <%- include('../includes/header', infos ); %>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="content">
+        <!-- 배너 영역 -->
+        <section class="banner">
+            <hr class="banner__img"/>
+        </section>
+
+       
+        <!-- 컨텐츠 내용 전체 영역 -->
+        <div class="content__container">
+
+            <!-- 메인 컨텐츠 엘리먼트 -->
+            <section class="content__main">
+              <h2 class="content__main-title">Sample-DB</h2>
+
+              <div id="sampleNhnGrid" style="display:none;">
+                <ul class="content__main-list">
+                  <li class="content__main-item">
+                    <h3> - Sample Nhn Grid</h3>
+
+                    <div id="displayGridViewDiv">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div id="sampleRandomChart" style="display:none;">
+                <ul class="content__main-list">
+                  <li class="content__main-item">
+                    <h3> - Sample Random Chart</h3>
+
+                    <div id="displayChartViewDiv">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div id="registDataArea" style="display:none;">
+                <ul class="content__main-list">
+                  <li class="content__main-item">
+                    <h3> - Sample Database 등록</h3>
+                    <h4><label class="labelDefCls">ID</label> <input class='inputHalfCls' type='text' id="registIdTxt"/> - MAIN TABLE ID</h4>
+                    <h4><label class="labelDefCls">TITLE</label> <input class='inputDefCls' type='text' id="registTitleTxt"/></h4> 
+                    <h4><label class="labelDefCls">TEST ID</label> <input class='inputHalfCls' type='text' id="registTestIdTxt"/> - SUB TABLE ID</h4>                                       
+                    <h4><label class="labelDefCls">TEST CONTENTS</label> <input class='inputDefCls' type='text' id="registContentsTxt"/></h4>                                       
+                    <h4><input type='button' value="SAMPLE 등록" class="inputDefCls" id="registActionBtn"/></h4>
+
+                    <div id="displayRegisterViewDiv"></div>
+
+                  </li>
+                </ul>
+              </div>
+
+              <div id="searchListArea" style="display:none;">
+                <ul class="content__main-list">
+                  <li class="content__main-item">
+                    <h3> - Sample Database 검색</h3>
+                    <h4><label class="labelSearchCls">ID</label> <input class='inputSearchCls' type='text' id="searchIdTxt"/> &nbsp; &nbsp; <label class="labelDefCls">TITLE</label> <input class='inputHalfCls' type='text' id="searchTitleTxt"/></h4> 
+                    <h4><input type='button' value="SAMPLE 검색" class="inputDefCls" id="searchActionBtn"/></h4>
+
+                    <div id="displayListViewDiv"></div>
+                  </li>
+                </ul>
+              </div>
+
+
+            </section>
+            
+            <!-- 사이드 컨텐츠 엘리먼트 -->
+            <article class="content__side">
+                <h2 class="content__side-title">Sample - Menu</h2>
+                <p><a href="#" name="aLinkMenuList">Sample Database 등록</a></p>
+                <p><a href="#" name="aLinkMenuList">Sample Database 검색</a></p>
+                <p><a href="#" name="aLinkMenuList">Sample Random Chart</a></p>
+                <p><a href="#" name="aLinkMenuList">Sample NHN Grid</a></p>
+            </article>            
+        </div>
+
+    </main>
+
+
+  </div>   
+
+  <%- include('../includes/footer'); %>
+
+<script src="/js/mainMenu.js"></script>
+
+<script async type="module">
+
+    import commonJS from "/js/common.js";
+
+
+    const changeViewTest = (typeNum) => {
+        const obj1 = document.querySelector("#sampleNhnGrid");
+        const obj4 = document.querySelector("#sampleRandomChart");
+        const obj2 = document.querySelector("#registDataArea");
+        const obj3 = document.querySelector("#searchListArea");
+        if ( typeNum == 1 ) {
+          document.getElementById('registIdTxt').value = '';
+          document.getElementById('registTitleTxt').value = '';
+          document.getElementById('registTestIdTxt').value = '';
+          document.getElementById('registContentsTxt').value = '';
+
+          makeSampleRegistGrid([]);
+
+          obj1.style.display = 'none';
+          obj2.style.display = '';
+          obj3.style.display = 'none';
+          obj4.style.display = 'none';
+        } else if ( typeNum == 2 ) {
+          document.getElementById('searchIdTxt').value = '';
+          document.getElementById('searchTitleTxt').value = '';
+
+          makeSampleGrid([]);
+
+          obj1.style.display = 'none';
+          obj2.style.display = 'none';
+          obj3.style.display = '';
+          obj4.style.display = 'none';
+        } else if ( typeNum == 3 ) {
+          //obj4.innerHTML = "";
+          obj1.style.display = 'none';
+          obj2.style.display = 'none';
+          obj3.style.display = 'none';
+          obj4.style.display = '';          
+          makeRamdomChart();
+        } else if ( typeNum == 4 ) {
+          //obj1.innerHTML = "";
+          obj1.style.display = '';
+          obj2.style.display = 'none';
+          obj3.style.display = 'none';
+          obj4.style.display = 'none';          
+          makeRandomGrid();
+        }
+    }
+
+    const aObjArr = document.getElementsByName("aLinkMenuList");
+    for ( let i = 0, iSize = aObjArr.length; i < iSize; i++  ) {
+        let idx = i+1;
+        aObjArr[i].addEventListener( "click", () => {
+            changeViewTest(idx);
+        }, false);
+    }
+
+
+    let sampleListGrid;
+    let sampleRegistGrid;
+
+    const makeSampleRegistGrid = ( gridData ) => {
+      
+      if ( sampleRegistGrid ) {
+        sampleRegistGrid.resetData(gridData);
+        return;
+      }
+      sampleRegistGrid = new tui.Grid({
+        el: document.getElementById('displayRegisterViewDiv'),
+        data: gridData,
+        scrollX: false,
+        bodyHeight: 500,
+        columns: [
+          {
+            header: 'ID',
+            name: 'ID',
+            align: 'center'
+          },
+          {
+            header: 'TITLE',
+            name: 'TITLE',
+            className: 'clickable'
+          },
+          {
+            header: 'SUB ID',
+            name: 'TEST_ID',
+            align: 'center'
+          },
+          {
+            header: 'CONTENTS',
+            name: 'CONTENTS',
+            align: 'center'
+          },
+          {
+            header: 'CREATE_DATE',
+            name: 'CREATE_DATE',
+            align: 'center'
+          },
+          {
+            header: 'DTL_CREATE_DATE',
+            name: 'DTL_CREATE_DATE',
+            align: 'center'
+          }
+        ]
+      });
+    };
+
+    const makeSampleGrid = (gridData) => {
+      //document.getElementById('displayListViewDiv').innerHTML = "";
+
+      if ( !Array.isArray(gridData)) {
+        alert("데이터를 확인할 수 없습니다.");
+        return;
+      }
+
+      if ( sampleListGrid ) {
+        sampleListGrid.resetData(gridData);
+        return;
+      }
+      sampleListGrid = new tui.Grid({
+        el: document.getElementById('displayListViewDiv'),
+        data: gridData,
+        scrollX: false,
+        bodyHeight: 500,
+        columns: [
+          {
+            header: 'ID',
+            name: 'ID',
+            align: 'center'
+          },
+          {
+            header: 'TITLE',
+            name: 'TITLE',
+            className: 'clickable'
+          },
+          {
+            header: 'SUB ID',
+            name: 'TEST_ID',
+            align: 'center'
+          },
+          {
+            header: 'CONTENTS',
+            name: 'CONTENTS',
+            align: 'center'
+          },
+          {
+            header: 'CREATE_DATE',
+            name: 'CREATE_DATE',
+            align: 'center'
+          },
+          {
+            header: 'DTL_CREATE_DATE',
+            name: 'DTL_CREATE_DATE',
+            align: 'center'
+          }
+        ]
+      });
+    };
+
+
+    const makeSampleDBList = async () => {
+        const url = "/samples/list";
+
+        let id = document.getElementById('searchIdTxt').value;
+        let title = document.getElementById('searchTitleTxt').value;
+
+        const params = {
+          ID:id,
+          TITLE: title
+        };
+
+        const result = await commonJS.sendPostAjax(url, params);
+        makeSampleGrid(result.data.sampleData);
+    };
+
+    const makeSampleDBRegist = async () => {
+
+      const url = "/samples/regist";
+
+      let id = document.getElementById('registIdTxt').value;
+      let title = document.getElementById('registTitleTxt').value;
+      let test_id = document.getElementById('registTestIdTxt').value;
+      let contents = document.getElementById('registContentsTxt').value;
+      const params = {
+        masterArray:[id,title],
+        dtlArray:[test_id,contents,id]
+      };
+
+      const result = await commonJS.sendPostAjax(url, params);
+      if ( result.status == 0 ) {
+        makeSampleRegistGrid(result.data.sampleData);
+      } else {
+        alert ( result.message );
+        if ( confirm("상세내역을 확인하시겠습니까?")) {
+          alert ( JSON.stringify(result.data.sampleData) );
+        }
+      }
+    };
+   
+
+    //await makeSampleDBList();
+
+
+const makeRandomGrid = () => {
+  document.getElementById('displayGridViewDiv').innerHTML = "";
+  const gridData = [];
+  (function() {
+    for (let i = 0; i < 120; i += 1) {
+      gridData.push({
+        c1: 'User' + (i + 1),
+        c2: ((i + 5) % 8) * 100 + i,
+        c3: ((i + 3) % 7) * 60
+      });
+    }
+  })();
+
+  const grid = new tui.Grid({
+    el: document.getElementById('displayGridViewDiv'),
+    data: gridData,
+    scrollX: false,
+    bodyHeight: 500,
+    rowHeaders: ['rowNum'],
+    columns: [
+      {
+        header: 'User ID',
+        name: 'c1',
+        align: 'center',
+        editor: 'text'
+      },
+      {
+        header: 'Score',
+        name: 'c2',
+        className: 'clickable',
+        editor: 'text'
+      },
+      {
+        header: 'Item Count',
+        name: 'c3',
+        editor: 'text'
+      }
+    ],
+    summary: {
+      height: 40,
+      position: 'bottom', // or 'top'
+      columnContent: {
+        c2: {
+          template: function(valueMap) {
+            return `MAX: ${valueMap.max}<br>MIN: ${valueMap.min}`;
+          }
+        },
+        c3: {
+          template: function(valueMap) {
+            return `TOTAL: ${valueMap.sum} <br>AVG: ${valueMap.avg.toFixed(2)}`;
+          }
+        }
+      }
+    }
+  });
+}
+
+
+const makeRamdomChart = () => {
+  document.getElementById('displayChartViewDiv').innerHTML = "";
+	function getrandom(num , mul) {
+		var value = [ ];
+		for(let i=0;i<=num;i++)
+		{
+			var rand = Math.random() * mul;
+			value.push(rand);
+		}
+		return value;
+	}
+	
+	var data=[
+		{
+			 opacity:0.4,
+			 type: 'scatter3d',
+			 x: getrandom(50 , -75),
+			 y: getrandom(50 , -75),
+			 z: getrandom(50 , -75),
+		},
+		{
+			 opacity:0.5,
+			 type: 'scatter3d',
+			 x: getrandom(50 , -75),
+			 y: getrandom(50 , 75),
+			 z: getrandom(50 , 75),
+		},
+		{
+			 opacity:0.5,
+			 type: 'scatter3d',
+			 x: getrandom(50 , 100),
+			 y: getrandom(50 , 100),
+			 z: getrandom(50 , 100),
+		}
+	];
+	var layout = {
+		scene:{
+	 		aspectmode: "manual",
+			aspectratio: {
+				x : 1, y: 0.7, z: 1,
+			},
+			xaxis: {
+				nticks: 9,
+				range: [-200, 100],
+			},
+			yaxis: {
+				nticks: 7,
+				range: [-100, 100],
+			},
+			zaxis: {
+				nticks: 10,
+				range: [-150, 100],
+			}
+		},
+	};
+	Plotly.newPlot('displayChartViewDiv', data, layout, {'displaylogo':false});
+}
+
+  document.querySelector("#searchActionBtn").addEventListener("click", makeSampleDBList, false);
+  document.querySelector("#registActionBtn").addEventListener("click", makeSampleDBRegist, false);
+
+    // 초기화
+  changeViewTest(2);
+  
+
+</script>
+</body>
+</html>

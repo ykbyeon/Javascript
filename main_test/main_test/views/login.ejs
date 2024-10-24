@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/main.css" rel="stylesheet" />
+    <style>
+        INPUT {
+            width:240px;
+            height:30px;
+            padding: 2px;
+            border:dotted 2px cyan;
+        }
+        LABEL {
+            display: inline-block;
+            width: 180px;
+            height: 30px;
+            padding : 2px;
+        }
+        INPUT[type=button] {
+            width: 420px;
+        }
+    </style>
+</head>
+<body>
+<!-- 전체 영역 -->
+<div class="def_padding_top">
+  
+    <!-- 상단 영역 -->
+    <%- include('./includes/header', infos); %>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="content">
+    <!-- 컨텐츠 영역 -->
+    <main class="content">
+        <!-- 배너 영역 -->
+        <section class="banner">
+            <!--<img src="http://placehold.it/1" alt="banner image" class="banner__img">-->
+            <hr class="banner__img"/>
+        </section>
+        
+        <!-- 컨텐츠 내용 전체 영역 -->
+        <div class="content__container">
+
+            <!-- 메인 컨텐츠 엘리먼트 -->
+            <section class="content__main">
+                <h2 class="content__main-title">Request Login.</h2>
+
+                <ul class="content__main-list">
+                    <li class="content__main-item">
+                      <h3><label>ID : </label><input type="text" id="userIDTxt"/></h3>
+                    </li>
+                    <li class="content__main-item">
+                      <h3><label>PASSWORD : </label><input type="password" id="userPwdTxt"/> </h3>
+                    </li>
+                    <li class="content__main-item">
+                        <h3><input type="button" value="LogIN" id="registActionBtn"/> </h3>
+                    </li>
+                </section>
+        </div>
+    </main>
+
+
+  </div>    
+  
+  <%- include('./includes/footer'); %>  
+
+<script src="/js/mainMenu.js"></script>
+  <script async type="module">
+    import commonJS from "/js/common.js";
+
+    const registKeyDownEvent = async ( evt ) => {
+        if ( evt.keyCode === 13 ) {
+            await registUserInfo();
+        }
+    };
+
+    const registUserInfo = async () => {
+        const url = "/registUserInfo";
+
+        const userID = document.getElementById('userIDTxt').value;
+        const userPWD = document.querySelector("#userPwdTxt").value;
+        if ( !userID || !userID.trim() ) {
+            alert ( "사용자 ID 를 입력해 주세요 !");
+            document.getElementById('userIDTxt').focus();            
+            return;
+        }
+        if ( !userPWD || !userPWD.trim() ) {
+            alert ( "PASSWORD 를 입력해 주세요 !");
+            document.querySelector("#userPwdTxt").focus();
+            return;
+        }
+        const params = {
+          'id':userID.trim(),
+          'password': userPWD.trim()
+        };
+
+        const result = await commonJS.sendPostAjax(url, params);
+        if ( result.status === 0 ) {
+            alert ( result.message + " , ID : " + userID);
+            location.href = "/";
+        } else {
+            alert ( JSON.stringify(result) );
+        }
+    }
+
+    document.querySelector("#registActionBtn").addEventListener("click", registUserInfo, false);
+    document.querySelector("#userIDTxt").addEventListener("keydown", registKeyDownEvent, false);
+    document.querySelector("#userPwdTxt").addEventListener("keydown", registKeyDownEvent, false);
+
+  </script>
+</body>
+</html>
