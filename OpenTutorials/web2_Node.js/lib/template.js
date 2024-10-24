@@ -3,7 +3,7 @@ module.exports = {
         return `<!doctype html>
                     <html>
                     <head>
-                        <title>WEB3 - ${title}</title>
+                        <title>WEB2 - ${title}</title>
                         <meta charset="utf-8">
                     </head>
                     <body>
