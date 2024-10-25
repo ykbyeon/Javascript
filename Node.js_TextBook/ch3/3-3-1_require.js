@@ -6,6 +6,7 @@ require('./3-3-1_var');
 
 console.log('require.chche입니다.');
 console.log(require.cache);
+console.log(require.cache.exports);
 console.log('=====================');
 console.log('require.main입니다');
 console.log(require.main === module);
