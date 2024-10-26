@@ -7,3 +7,6 @@ console.log('path.delimiter:', path.delimiter);
 console.log("===================");
 console.log('path.dirname():', path.dirname(string));
 
+
+console.log('path.isAbsolute(c:\\):', path.isAbsolute('C:\\'));
+
