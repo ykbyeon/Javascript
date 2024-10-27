@@ -60,9 +60,9 @@ ls.on('close', (code) => {
 
 이 두 방법은 각각의 용도에 맞게 선택하여 사용하면 됩니다. 작은 양의 데이터를 처리하거나 쉘 기능이 필요한 경우 `exec`, 대량의 데이터를 스트리밍하거나 장시간 실행되는 프로세스에는 `spawn`을 사용하는 것이 좋습니다.
 
-Citations:
-[1] https://nodejs.org/api/child_process.html
-[2] https://www.javatpoint.com/nodejs-child-process
-[3] https://stackoverflow.com/questions/48698234/node-js-spawn-vs-execute/48698373
-[4] https://www.digitalocean.com/community/tutorials/how-to-launch-child-processes-in-node-js
-[5] https://www.freecodecamp.org/korean/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
+**Citations:**   
+[1] https://nodejs.org/api/child_process.html   
+[2] https://www.javatpoint.com/nodejs-child-process   
+[3] https://stackoverflow.com/questions/48698234/node-js-spawn-vs-execute/48698373   
+[4] https://www.digitalocean.com/community/tutorials/how-to-launch-child-processes-in-node-js   
+[5] https://www.freecodecamp.org/korean/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/   
