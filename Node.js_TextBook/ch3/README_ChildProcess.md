@@ -1,4 +1,4 @@
-# Chile Process
+# Child Process
 
 ### 차이점: `exec` vs `spawn`
 
