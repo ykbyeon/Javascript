@@ -45,7 +45,7 @@ http.createServer(async (req, res) => {
                 });
             }
         } else if (req.method === 'PUT') {
-            if (req.url.startWith('/user/')) {
+            if (req.url.startsWith('/user/')) {
                 const key = req.url.split('/')[2];
                 let body = '';
                 req.on('data', (data) => {
@@ -59,7 +59,7 @@ http.createServer(async (req, res) => {
                 });
             }
         } else if (req.method === 'DELETE') {
-            if (req.url.startsWith('/uses/')) {
+            if (req.url.startsWith('/user/')) {
                 const key = req.url.split('/')[2];
                 delete users[key];
                 res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
