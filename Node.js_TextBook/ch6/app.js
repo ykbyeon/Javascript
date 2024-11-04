@@ -34,9 +34,11 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res, next) => {
     console.log('GET / 요청에서만 실행됩니다.');
+    res.locals.test = 'Data Test';
     next();
 }, (req, res, next) => {
     console.log(req.url);
+    console.log(res.locals.test);
     //res.send('YK.Byeon 응답입니다.'); // https://www.perplexity.ai/search/const-express-require-express-m2yAeCWJRlK9KMwqUXE4PA#1
     next();
 }, (req, res) => {
