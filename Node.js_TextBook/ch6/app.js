@@ -45,7 +45,7 @@ const upload = multer({
             done(null, 'uploads/');
         },
         filename(req, file, done) {
-            file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8')
+            file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8');
             //출처: https://nami-socket.tistory.com/51 
 
             const ext = path.extname(file.originalname);
@@ -63,6 +63,11 @@ app.get('/upload2', (req, res) => {
     res.sendFile(path.join(__dirname, 'multipart2.html'));
 });
 
+app.get('/upload3', (req, res) => {
+    res.sendFile(path.join(__dirname, 'multipart3.html'));
+});
+
+
 app.post('/upload', upload.single('image'), (req, res) => {
     console.log(req.file, req.body);
     res.send('ok');
@@ -72,6 +77,13 @@ app.post('/upload2', upload.array('many'), (req, res) => {
     console.log(req.files, req.body);
     res.send('ok');
 });
+
+app.post('/upload3',
+    upload.fields([{ name: 'image1' }, { name: 'image2' }]),
+    (req, res) => {
+        console.log(req.files, '||||||||||||||||||||', req.body);
+        res.send('ok');
+    });
 
 app.use((req, res, next) => {
     console.log('모든 요청에 다 실행됩니다.');
