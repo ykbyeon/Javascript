@@ -7,7 +7,8 @@ const path = require('path');
 
 dotenv.config();
 const app = express();
-app.set('port', process.env.PORT || 3000);
+//app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 
 app.use(morgan(process.argv[2] || 'dev'));
 app.use('/', express.static(path.join(__dirname, 'public')));
@@ -44,6 +45,9 @@ const upload = multer({
             done(null, 'uploads/');
         },
         filename(req, file, done) {
+            file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8')
+            //출처: https://nami-socket.tistory.com/51 
+
             const ext = path.extname(file.originalname);
             done(null, path.basename(file.originalname, ext) + Date.now() + ext);
         },
@@ -55,8 +59,17 @@ app.get('/upload', (req, res) => {
     res.sendFile(path.join(__dirname, 'multipart.html'));
 });
 
+app.get('/upload2', (req, res) => {
+    res.sendFile(path.join(__dirname, 'multipart2.html'));
+});
+
 app.post('/upload', upload.single('image'), (req, res) => {
-    console.log(req.file);
+    console.log(req.file, req.body);
+    res.send('ok');
+});
+
+app.post('/upload2', upload.array('many'), (req, res) => {
+    console.log(req.files, req.body);
     res.send('ok');
 });
 
