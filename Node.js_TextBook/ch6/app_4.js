@@ -38,6 +38,7 @@ try {
     fs.mkdirSync('uploads');
 }
 
+
 const upload = multer({
     storage: multer.diskStorage({
         destination(req, file, done) {
@@ -66,6 +67,7 @@ app.get('/upload3', (req, res) => {
     res.sendFile(path.join(__dirname, 'multipart3.html'));
 });
 
+
 app.post('/upload', upload.single('image'), (req, res) => {
     console.log(req.file, req.body);
     res.send('ok');
@@ -83,13 +85,6 @@ app.post('/upload3',
         res.send('ok');
     });
 
-
-const indexRouter = require('./routes/');
-const userRouter = require('./routes/user');
-
-
-
-
 app.use((req, res, next) => {
     console.log('모든 요청에 다 실행됩니다.');
     next();
@@ -104,10 +99,8 @@ app.get('/', (req, res, next) => {
     console.log(res.locals.test);
     //res.send('YK.Byeon 응답입니다.'); // https://www.perplexity.ai/search/const-express-require-express-m2yAeCWJRlK9KMwqUXE4PA#1
     next();
-}, (req, res, next) => {
-    //throw new Error('에러는 에러 처리 미들웨어로 갑니다.')
-    console.log('에러는 에러 처리 미들웨어로 갑니다.');
-    next();
+}, (req, res) => {
+    throw new Error('에러는 에러 처리 미들웨어로 갑니다.')
 });
 
 app.use((err, req, res, next) => {
@@ -115,14 +108,6 @@ app.use((err, req, res, next) => {
     res.status(500).send(err.message);
 });
 
-
-app.use('/', indexRouter);
-app.use('/user', userRouter);
-
-app.use((req, res, next) => {
-    res.status(404).send('Not Found');
-    //next();
-});
 
 app.listen(app.get('port'), () => {
     console.log(app.get('port'), '번 포트에서 대기 중');
