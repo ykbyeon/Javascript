@@ -4,11 +4,14 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const dotenv = require('dotenv');
 const path = require('path');
+const nunjucks = require('nunjucks');
 
 dotenv.config();
 const app = express();
 //app.set('port', process.env.PORT || 3000);
 app.set('port', process.env.PORT || 8080);
+
+
 
 app.use(morgan(process.argv[2] || 'dev'));
 app.use('/', express.static(path.join(__dirname, 'public')));
