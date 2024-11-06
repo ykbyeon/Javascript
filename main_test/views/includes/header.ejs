@@ -1,0 +1,36 @@
+
+
+    <!-- 상단 영역 -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#"><%=mainTitle%></a>
+            </div>
+            <nav class="nav header__nav">
+                <ul class="nav__list_end">
+                    <li class="nav__item">
+                        <% if (userID) { %>
+                        <a href="#" class="nav__link" onclick="requestLogout()">
+                                <%=userID%>
+                        </a>
+                        <% } else { %>
+                            <a href="#" class="nav__link" onclick="requestLogin()">                       
+                                Please Log in.
+                            </a>
+                        <% } %> 
+                    </li>
+                </ul>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                      <a href="#" class="nav__link" onclick="goNavigation(1)">Home</a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="#" class="nav__link" onclick="goNavigation(2)">Sample</a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="#" class="nav__link"  onclick="goNavigation(3)">About</a>
+                    </li>
+                </ul>                
+            </nav>
+        </div>          
+    </header>
