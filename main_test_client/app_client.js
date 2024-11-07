@@ -1,20 +1,17 @@
 import initializer from "#core/utils/initializer.js";
 import express from "express";
 import helmet from "helmet";
-import cors from "cors";
 import path from "path";
+import sampleRouter from "#routes/samples/index.js";
 
 await initializer.initializeConfigPost();
 
 const port = process.env.SERVICE_PORT || 5000;
 const app = express();
 
-app.use(helmet({ contentSecurityPolicy: false }));
+app.use(helmet({ contentSecurityPolicy: false })); F
 app.disable('x-powered-by');
-app.use(cors({
-    origin: '*',
-    credential: true
-}));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,6 +24,8 @@ app.use((req, res, next) => {
     console.log(`##    INTRO FILTER - 모든 패킷 통과 ::: [ CLIENT IP : ${req.ip} , REQUEST URL : ${req.url} ]`);
     next();
 });
+
+app.use("/samples", sampleRouter);
 
 
 /**
