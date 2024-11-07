@@ -1,3 +1,5 @@
+// 2024.11.07 main_test프로그램의 initializer.js 파일내용을 기준으로, 필요한 항목들만 추려냄 - yk.byeon
+
 import dotenv from "dotenv";
 
 const initializeConfigPost = async () => {

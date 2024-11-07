@@ -1,8 +1,8 @@
 
 
 import express from "express";
-import asyncify  from "express-asyncify";
-const router    = asyncify(express.Router());
+import asyncify from "express-asyncify";
+const router = asyncify(express.Router());
 import path from "path";
 import sampleCtrl from "#controllers/sampleController.js";
 
@@ -12,12 +12,12 @@ router.get("/", async (req, res) => {
         "title": "제목 테스트 입니다.",
         "message": "My World!!!",
         'infos': {
-            mainTitle : 'Sample',
-            userID : res.locals.user.userID,
-            userRole : res.locals.user.userRole
+            mainTitle: 'Sample',
+            userID: res.locals.user.userID,
+            userRole: res.locals.user.userRole
         }
     };
-    res.render("samples/sample", data);    
+    res.render("samples/sample", data);
 });
 
 router.post("/list", async (req, res) => {
@@ -28,14 +28,14 @@ router.post("/list", async (req, res) => {
 
 router.get("/list", async (req, res) => {
     let params = req.params;
-    console.log ( params);
-    let result = await sampleCtrl.getSampleDataListAll( {ID:'1',TITLE:'T'});
+    console.log(params);
+    let result = await sampleCtrl.getSampleDataListAll({ ID: '1', TITLE: 'T' });
     res.json(result);
 });
 
 router.post("/regist", async (req, res) => {
     let params = req.body;
-    console.log ( params );
+    console.log(params);
     let result = await sampleCtrl.modifySampleMasterDetailValues(params);
     res.json(result);
 });

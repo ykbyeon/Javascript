@@ -1,4 +1,7 @@
 {
+  "__comment__": {
+    "2024.11.07": "main_test프로그램의 sampleController.js 파일내용을 기준으로, 필요한 항목들만 추려냄 - yk.byeon"
+  },
   "type": "module",
   "imports": {
     "#core/*": "./core/*",
@@ -15,6 +18,7 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
+    "express-asyncify": "^3.1.0",
     "helmet": "^8.0.0",
     "path": "^0.12.7"
   }

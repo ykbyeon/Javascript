@@ -1,3 +1,5 @@
+// 2024.11.07 main_test프로그램의 app.js 파일내용을 기준으로, 필요한 항목들만 추려냄 - yk.byeon
+
 import initializer from "#core/utils/initializer.js";
 import express from "express";
 import helmet from "helmet";
@@ -9,7 +11,7 @@ await initializer.initializeConfigPost();
 const port = process.env.SERVICE_PORT || 5000;
 const app = express();
 
-app.use(helmet({ contentSecurityPolicy: false })); F
+app.use(helmet({ contentSecurityPolicy: false }));
 app.disable('x-powered-by');
 
 
