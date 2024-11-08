@@ -27,7 +27,21 @@ app.use((req, res, next) => {
     next();
 });
 
+
+
+// 사용자 권한 부분에 대한 이해 및 구현 필요
+app.use(async (req, res, next) => {
+    console.time("CHECK_AUTHORIZATION_USERS");
+    const userID = "UNKNOWN_ID";
+    res.locals.user = { 'userID': userID, 'userRole': 1 };
+    next();
+    console.timeEnd("CHECK_AUTHORIZATION_USERS");
+});
+
+
+
 app.use("/samples", sampleRouter);
+
 
 
 /**
@@ -41,6 +55,7 @@ app.use((req, res, next) => {
 });
 
 
+
 /**
  * Default Error Page Handling
  */
@@ -50,6 +65,7 @@ app.use((err, req, res, next) => {
     res.send("INTENAL SERVER ERROR!!!");
     res.end();
 });
+
 
 
 app.listen(port, () => {
