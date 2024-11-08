@@ -147,7 +147,7 @@
                       class='inputHalfCls' type='text' id="searchTitleTxt" /></h4>
                   <h4><input type='button' value="SAMPLE 검색" class="inputDefCls" id="searchActionBtn" /></h4>
 
-                  <!-- <div id="displayListViewDiv">
+                  <div id="displayListViewDiv">
                     <tbody>
                       <tr>
                         <td>ID</td>
@@ -157,9 +157,18 @@
                         <td>CREATE_DATE</td>
                         <td>DTL_CREATE_DATE</td>
                       </tr>
-                      데이터 처리 부분 로직 추가 필요
+                      <% data.forEach( record => { %>
+                        <tr>
+                          <td> <%= record.ID %> </td>
+                          <td> <%= record.TITLE %></td>
+                          <td> <%= record.TEST_ID %></td>
+                          <td> <%= record.CONTENTS %></td>
+                          <td> <%= record.CREATE_DATE %></td>
+                          <td> <%= record.DTL_CREATE_DATE %></td>
+                        </tr>
+                      <% }) %>
                     </tbody>
-                  </div> -->
+                  </div>
                 </li>
               </ul>
             </div>
@@ -375,8 +384,14 @@
         };
 
         const result = await commonJS.sendPostAjax(url, params);
-        makeSampleGrid(result.data.sampleData);
-        //app.render("samples/sample", { data: result.data.sampleData });
+        //makeSampleGrid(result.data.sampleData);
+        app.render("samples/sample", 
+        { data: result.data.sampleData, 
+          info: {
+            mainTitle: 'Sample',
+            userID: res.locals.user.userID,
+            userRole: res.locals.user.userRole }
+          });
       };
 
       const makeSampleDBRegist = async () => {

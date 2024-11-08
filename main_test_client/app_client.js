@@ -5,6 +5,7 @@ import express from "express";
 import helmet from "helmet";
 import path from "path";
 import sampleRouter from "#routes/samples/index.js";
+import sampleRouter2 from "#routes/samples/index2.js";
 
 await initializer.initializeConfigPost();
 
@@ -41,7 +42,7 @@ app.use(async (req, res, next) => {
 
 
 app.use("/samples", sampleRouter);
-
+app.use("/samples2", sampleRouter2);
 
 
 /**
