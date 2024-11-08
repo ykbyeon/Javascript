@@ -6,4 +6,4 @@
 
 ## 6.4 req, res 객체 살펴보기
 >- [(기타) res.locals vs res 값 할당의  차이](https://stackoverflow.com/q/24072333/28188826)
->- [(기타) Res.locals를 사용하는 대표적인 사례]()
+>- [(기타) Res.locals를 사용하는 대표적인 사례](https://github.com/ykbyeon/Javascript/edit/main/Node.js_TextBook/ch6/README_res.local_Usage.md)
