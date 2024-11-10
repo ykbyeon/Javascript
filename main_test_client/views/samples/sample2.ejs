@@ -384,14 +384,7 @@
         };
 
         const result = await commonJS.sendPostAjax(url, params);
-        //makeSampleGrid(result.data.sampleData);
-        app.render("samples/sample", 
-        { data: result.data.sampleData, 
-          info: {
-            mainTitle: 'Sample',
-            userID: res.locals.user.userID,
-            userRole: res.locals.user.userRole }
-          });
+        makeSampleGrid(result.data.sampleData);
       };
 
       const makeSampleDBRegist = async () => {
@@ -537,7 +530,9 @@
         Plotly.newPlot('displayChartViewDiv', data, layout, { 'displaylogo': false });
       }
 
-      document.querySelector("#searchActionBtn").addEventListener("click", makeSampleDBList, false);
+      //document.querySelector("#searchActionBtn").addEventListener("click", makeSampleDBList, false);
+      document.querySelector("#searchActionBtn").addEventListener("click", document.location.replace("/remote/list"), false); //2024.11.07 yk.byeon
+
       document.querySelector("#registActionBtn").addEventListener("click", makeSampleDBRegist, false);
 
       // 초기화
