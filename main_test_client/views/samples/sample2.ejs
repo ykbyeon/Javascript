@@ -124,7 +124,7 @@
               </ul>
             </div>
 
-            <div id="searchListArea" style="display:none;">
+            <!-- <div id="searchListArea" style="display:none;">
               <ul class="content__main-list">
                 <li class="content__main-item">
                   <h3> - Sample Database 검색</h3>
@@ -136,7 +136,7 @@
                   <div id="displayListViewDiv"></div>
                 </li>
               </ul>
-            </div>
+            </div> -->
 
             <div id="searchListArea" style="display:none;">
               <ul class="content__main-list">
@@ -157,7 +157,7 @@
                         <td>CREATE_DATE</td>
                         <td>DTL_CREATE_DATE</td>
                       </tr>
-                      <% data.forEach( record => { %>
+                      <% remote_data.forEach( record => { %>
                         <tr>
                           <td> <%= record.ID %> </td>
                           <td> <%= record.TITLE %></td>
@@ -387,6 +387,20 @@
         makeSampleGrid(result.data.sampleData);
       };
 
+
+
+      const makeSampleRemoteDataList = async () => {
+        //const url = "http://localhost:3000/samples/list";
+
+        let id = document.getElementById('searchIdTxt').value;
+        let title = document.getElementById('searchTitleTxt').value;
+
+        //document.location.replace(`/remote_list?id="${id}"&title="${title}"`)
+        document.location.replace(`/remote_list`)
+      };
+
+      
+
       const makeSampleDBRegist = async () => {
 
         const url = "/samples/regist";
@@ -531,7 +545,7 @@
       }
 
       //document.querySelector("#searchActionBtn").addEventListener("click", makeSampleDBList, false);
-      document.querySelector("#searchActionBtn").addEventListener("click", document.location.replace("/remote/list"), false); //2024.11.07 yk.byeon
+      document.querySelector("#searchActionBtn").addEventListener("click", makeSampleRemoteDataList, false); //2024.11.07 yk.byeon
 
       document.querySelector("#registActionBtn").addEventListener("click", makeSampleDBRegist, false);
 
