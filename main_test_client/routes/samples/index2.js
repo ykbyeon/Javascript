@@ -44,7 +44,7 @@ router.get("/remote_list", async (req, res) => {
             userRole: res.locals.user.userRole
         },
 
-        'remote_data': result, // 2024.11.07 sample.ejs파일내 처리를 위해 추가 yk.byeon
+        'remote_data': result.data.sampleData, // 2024.11.07 sample.ejs파일내 처리를 위해 추가 yk.byeon
     };
 
     res.render("samples/sample2", data );
