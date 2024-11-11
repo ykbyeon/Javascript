@@ -1,0 +1,20 @@
+
+
+###
+POST http://192.168.2.39:3000/samples/list
+Content-Type: application/json
+exec_authorization: "AUTHRITY_MAIN_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJLS1MiLCJ1c2VyUm9sZSI6MSwiaWF0IjoxNzI5NTc4NzI4LCJleHAiOjE3Mjk1ODIzMjh9.N4rIwJfbbS25_Y3n7LsFt5eVqmG-9jF-EibMt3txhMI"
+
+
+###
+POST http://192.168.2.39:3000/auth/registUserInfoJWT
+Content-Type: application/json
+
+{
+    "id":"KKS",
+    "userID":"KWANG",
+    "password":"1234"
+}
+
+
+

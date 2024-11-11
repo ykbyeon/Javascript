@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tables {
+            background-color:#000080;
+            table-layout: fixed;
+            width:1200px;
+            padding:0px;
+            margin:0px;
+            font-size:10px;
+            word-break: break-all;
+            word-wrap: break-word;
+            
+        }
+
+        .tables TH, TD {
+            background-color: #efefef;
+            text-align: center;
+            line-height: 24px;
+            padding:0px;
+            margin:0px;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="button" id="btnLogin" value="login" />
+    <input type="button" id="btnList" value="sample List" />
+    <input type="button" id="btnTask" value="simple Task Request" />
+    <input type="button" id="btnTaskResult" value="Result View" />    
+
+
+    <pre id="preArea"></pre>
+    <div id="divArea"></div>
+    <pre id="preDetail"></pre>    
+
+    <script async type="module">
+
+        const baseURL = 'http://192.168.2.39:3000/';
+
+        let siteAuthToken = '';
+        let currentReqID    = '';
+
+        const makeFullURL = (partialUrl) => {
+            return `${baseURL}${partialUrl}`;
+        }
+
+        const sendLogin = async () => {
+            const data = {
+                id:'whoami-values',
+                password: '1234'
+            };
+            const url = makeFullURL("auth/registUserInfoJWT");
+            const result = await sendPostAjax(url, data, '');
+            alert ( JSON.stringify(result ));
+            siteAuthToken = result.data.authTokens;
+        }
+
+        const sendSampleList = async () => {
+            const data = [1, 'T'];
+            const url = makeFullURL("samples/list");
+            const result = await sendPostAjax(url, data, siteAuthToken);
+            if ( result && result.data ) {
+                if ( result.status == 0 ) {
+                    alert ("성공 : " +  result.message );
+                    document.querySelector("#preArea").innerText = JSON.stringify(result.data.sampleData);
+
+                    const dataArray = result.data.sampleData;
+                    let str = "<table class='tables' cellpadding='0' cellspacing='1'>\n";
+                    str += "<thead>\n";
+                    str += "<tr><th>ID</th><th>TITLE</th><th>TEST ID</th><th>CONTENTS</th></tr>\n";
+                    str += "</thead>\n";    
+                    str += "<tbody>\n";
+                    for ( let i = 0; i < dataArray.length; i++ ) {
+                        str += "<tr>";
+                        str += "<td>" + dataArray[i]['ID'] + "</td><td>" + dataArray[i]['TITLE'] + "</td>";
+                        str += "<td>" + dataArray[i]['TEST_ID'] + "</td><td>" + dataArray[i]['CONTENTS'] + "</td>\n";
+                        str += "</tr>\n";
+                    }
+                    str += "</tbody>\n";
+                    str += "</table>";
+                    document.querySelector("#divArea").innerHTML = str;
+
+                } else {
+                    alert ( result.data + "\n" + result.message );
+                }
+            }
+        }
+
+        const sendSimpleTasks = async () => {
+            if ( !siteAuthToken ) {
+                await sendLogin();
+            }
+            const data = {
+                mode: 1, 
+                cmds: "cmd.exe", 
+                args: ['/c', 'dir', '.'], 
+                options : {cwd:'d:\\data\\'} ,
+                logInfos: {
+                    logType: 0, //  1, 2, 4
+                    fileName : '',
+                    fileDir : ''
+                },
+                encoding: 'ksc5601',     
+                timeLimitMillis: -1
+            };
+            const url = makeFullURL("tasks/simple");
+            const result = await sendPostAjax(url, data, siteAuthToken);
+            if ( result && result.data ) {
+                if ( result.status == 0 ) {
+                    alert ("성공 : " +  result.data + " ::: " + result.REQ_ID);
+                    currentReqID = result.REQ_ID;
+                    document.querySelector("#preArea").innerText = JSON.stringify(result);
+                    setTimeout( async () => {
+                        if ( confirm ( "진행 내용을 확인하시겠습니까?")) {
+                            await sendResultByJobID( result.REQ_ID );
+                        };
+                    }, 50);
+                } else {
+                    alert ( result.data + "\n" + result.message );
+                }
+            }
+        }
+
+        const sendResultByJobID = async (id) => {
+            if ( !siteAuthToken ) {
+                await sendLogin();
+            }
+            let reqID = id;
+            if ( !id && currentReqID ) {
+                reqID = currentReqID;
+            }
+
+            const data = [reqID];
+            //alert ( 'data :: ' + data[0] );
+            const url = makeFullURL("tasks/requestJobOne");
+            const result = await sendPostAjax(url, data, siteAuthToken);
+            if ( result && result.data ) {
+                if ( result.status == 0 ) {
+                    alert (result.message);
+                    document.querySelector("#divArea").innerText = JSON.stringify(result);
+                    document.querySelector("#preDetail").innerText = result.data[0]['TASK_EXEC_RESULT'];
+                } else {
+                    alert ( result.data + "\n" + result.message );
+                }
+            }
+        }
+
+        const sendPostAjax = async ( url, jsonData, authToken ) => {
+            try {
+                const sendData = {
+                    method:"POST", 
+                    cache : "no-cache",
+                    headers : {
+                        "Content-Type": "application/json; charset=utf-8",
+                        "Exec_authorization": authToken,
+                    }, 
+                    body: JSON.stringify(jsonData),
+                };
+                const response = await fetch(url, sendData);
+                if ( typeof response === 'string') {
+                    document.getElementbyId('divArea').innerHTML = response;
+                    return;
+                }
+                let keys = '';
+                response.headers.keys().forEach ( (v) => { keys += v; } );
+                //alert ( keys );
+                if ( response.headers.task_auth_tokens )
+                    alert ( response.headers.task_auth_tokens );
+                const jsonValue = await response.json();
+                return jsonValue;
+            } catch ( e ) {
+                throw e;
+            } 
+        }    
+
+        document.querySelector("#btnLogin").addEventListener("click", sendLogin, false );
+        document.querySelector("#btnList").addEventListener("click", sendSampleList, false);
+        document.querySelector("#btnTask").addEventListener("click", sendSimpleTasks, false);
+        document.querySelector("#btnTaskResult").addEventListener("click", (() => { sendResultByJobID(); }), false);        
+
+
+    </script>
+
+</body>
+</html>
