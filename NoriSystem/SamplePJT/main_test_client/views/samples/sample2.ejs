@@ -78,7 +78,7 @@
       border: 1px solid black;
       border-radius: 1px;
       border-collapse: collapse;
-      margin: 25px 25px 25px 25px;
+      margin: 5px 5px 5px 5px;
       padding: 5px;
       font-family: D2Coding, Tahoma, Verdana, sans-serif;
       font-size: large;
@@ -305,6 +305,11 @@
       const aObjArr = document.getElementsByName("aLinkMenuList");
       for (let i = 0, iSize = aObjArr.length; i < iSize; i++) {
         let idx = i + 1;
+
+        if(idx === 2) { //2024.11.07 grid 구현 부분 제외 시키기기 위해 추가 - yk.byeon
+          idx = 5; 
+        }
+
         aObjArr[i].addEventListener("click", () => {
           changeViewTest(idx);
         }, false);
@@ -486,7 +491,7 @@
 
       //await makeSampleDBList();
 
-
+      
       const makeRandomGrid = () => {
         document.getElementById('displayGridViewDiv').innerHTML = "";
         const gridData = [];
@@ -605,7 +610,9 @@
       //document.querySelector("#searchActionBtn").addEventListener("click", makeSampleDBList, false);
       document.querySelector("#searchActionBtn").addEventListener("click", makeSampleRemoteDataList, false); //2024.11.07 yk.byeon
 
+
       document.querySelector("#registActionBtn").addEventListener("click", makeSampleDBRegist, false);
+
 
       // 초기화
       //changeViewTest(2);
