@@ -10,7 +10,7 @@
 >- [(기타) Res.locals를 사용하는 대표적인 사례](https://github.com/ykbyeon/Javascript/blob/main/Node.js_TextBook/ch6/README_res.local_Usage.md)
 
 ## [기타] WEB 및 네트워크 관련설정
->- [윈도10 포트 고갈(유령 점유) 문제 해결방법 - dynamicport 오류]()
+>- [윈도10 포트 고갈(유령 점유) 문제 해결방법 - dynamicport 오류](https://github.com/ykbyeon/Javascript/blob/main/Node.js_TextBook/ch6/README_dynamicport_issue.md)
 >- [netstat -ano | findstr #### 확인 시, 실제로 사용 중이지 않은데도 "이미 사용 중"이라는 오류가 발생할 때](https://github.com/ykbyeon/Javascript/blob/main/Node.js_TextBook/ch6/README_excluded_port_range.md)
 >- [(추천) CSS 관련](https://devjiraynor.github.io/2022-03-28-css-order-list/) :+1:
 >- [CSS flex 1 - MDN Reference](https://developer.mozilla.org/ko/docs/Web/CSS/flex)
