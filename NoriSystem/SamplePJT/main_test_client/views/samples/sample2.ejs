@@ -584,11 +584,17 @@
           let cellDTLCreateDate = newRow.insertCell(5);
          
           cellID.textContent = result.data.sampleData[0].ID;
+          cellID.className = "remoteDataList";
           cellTitle.textContent = result.data.sampleData[0].TITLE;
+          cellTitle.className = "remoteDataList";
           cellTestID.textContent = result.data.sampleData[0].TEST_ID;
+          cellTestID.className = "remoteDataList";
           cellContents.textContent = result.data.sampleData[0].CONTENTS;
+          cellContents.className = "remoteDataList2";
           cellCreateDate.textContent = result.data.sampleData[0].CREATE_DATE;
+          cellCreateDate.className = "remoteDataList2";
           cellDTLCreateDate.textContent = result.data.sampleData[0].DTL_CREATE_DATE;
+          cellDTLCreateDate.className = "remoteDataList2";
 
         } else {
           alert(result.message);
