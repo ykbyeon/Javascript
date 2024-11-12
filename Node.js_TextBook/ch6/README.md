@@ -15,3 +15,6 @@
 >- [CSS flex 1 - MDN Reference](https://developer.mozilla.org/ko/docs/Web/CSS/flex)
 >- [CSS flex 2 - 이번에야말로 CSS Flex를 익혀보자](https://studiomeal.com/archives/197)
 >- [Local vs Session Storage](https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-localStorage-sessionStorage)
+
+## [기타] DOM api관련
+>- [DOM 초보자 가이드](https://creativevista.tistory.com/entry/Javascript%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-DOM-%EB%A7%88%EC%8A%A4%ED%84%B0%ED%95%98%EA%B8%B0-%EC%B4%88%EB%B3%B4%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
