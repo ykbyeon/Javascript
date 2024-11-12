@@ -35,6 +35,7 @@ const getSampleDataListAll = async(params) => {
     return common.makeCommonJsonResult(data, serviceStatus);
 }
 
+
 /* const modifySampleMasterDetailValues = async(params) => {
     let sampleData ;
     let serviceStatus = -1;
@@ -77,10 +78,11 @@ const getSampleDataListAll = async(params) => {
     await db.graceShutdownPool();
 } */
 
+
 export default {
     // sampleCtrlTest, 
     // closeResource, 
     // sampleCtrlDTOTest, 
     getSampleDataListAll, 
-    // modifySampleMasterDetailValues
+    //modifySampleMasterDetailValues
 };

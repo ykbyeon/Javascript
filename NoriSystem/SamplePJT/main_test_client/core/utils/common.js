@@ -21,6 +21,8 @@ const makeCommonJsonResult = (data, status = -1, message) => {
     return result;
 };
 
+
+
 export default {
     makeCommonJsonResult,
 };

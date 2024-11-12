@@ -96,9 +96,9 @@
       border: 2px solid rgb(155, 14, 14);
       border-radius: 1px;
       border-collapse: collapse;
-      margin: 25px 25px 25px 25px;
-      padding: 5px;
-      font-family: Tahoma, Verdana, sans-serif;
+      margin: 5px;
+      padding: 2px;
+      font-family: D2Coding, Tahoma, Verdana, sans-serif;
       font-size: large;
     }
   </style>
@@ -149,7 +149,7 @@
               </ul>
             </div>
 
-            <div id="registDataArea" style="display:none;">
+            <!-- <div id="registDataArea" style="display:none;">
               <ul class="content__main-list">
                 <li class="content__main-item">
                   <h3> - Sample Database 등록</h3>
@@ -167,7 +167,40 @@
 
                 </li>
               </ul>
-            </div>
+            </div> -->
+
+            <div id="registDataArea" style="display:none;">
+              <ul class="content__main-list">
+                <li class="content__main-item">
+                  <h3> - Sample Database 등록</h3>
+                  <h4><label class="labelDefCls">ID</label> <input class='inputHalfCls' type='text' id="registIdTxt" />
+                    - MAIN TABLE ID</h4>
+                  <h4><label class="labelDefCls">TITLE</label> <input class='inputDefCls' type='text'
+                      id="registTitleTxt" /></h4>
+                  <h4><label class="labelDefCls">TEST ID</label> <input class='inputHalfCls' type='text'
+                      id="registTestIdTxt" /> - SUB TABLE ID</h4>
+                  <h4><label class="labelDefCls">TEST CONTENTS</label> <input class='inputDefCls' type='text'
+                      id="registContentsTxt" /></h4>
+                  <h4><input type='button' value="SAMPLE 등록" class="inputDefCls" id="registActionBtn" /></h4>
+
+                  <div id="displayRegisterViewDiv">
+                    <table class="remoteDataList" id="listRegisterData">
+                      <tbody>
+                        <tr class="remoteDataList">
+                          <th class="remoteDataList">ID</th>
+                          <th class="remoteDataList">TITLE</th>
+                          <th class="remoteDataList">SUB ID</th>
+                          <th class="remoteDataList">CONTENTS</th>
+                          <th class="remoteDataList">CREATE_DATE</th>
+                          <th class="remoteDataList">DTL_CREATE_DATE</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </li>
+              </ul>
+            </div>            
 
             <!-- <div id="searchListArea" style="display:none;">
               <ul class="content__main-list">
@@ -312,6 +345,18 @@
           obj2.style.display = 'none';
           obj3.style.display = '';
           obj4.style.display = 'none';
+        } else if (typeNum == 6) { // 2024.11.07 - yk.byeon
+          document.getElementById('registIdTxt').value = '';
+          document.getElementById('registTitleTxt').value = '';
+          document.getElementById('registTestIdTxt').value = '';
+          document.getElementById('registContentsTxt').value = '';
+
+          //makeSampleRegistGrid([]); //2024.11.07 데이터 추가 시 grid 구현 부분 제외 - yk.byeon
+
+          obj1.style.display = 'none';
+          obj2.style.display = '';
+          obj3.style.display = 'none';
+          obj4.style.display = 'none';
         }
       }
 
@@ -319,7 +364,11 @@
       for (let i = 0, iSize = aObjArr.length; i < iSize; i++) {
         let idx = i + 1;
 
-        if (idx === 2) { //2024.11.07 grid 구현 부분 제외 시키기기 위해 추가 - yk.byeon
+        if (idx === 1) { //2024.11.07 데이터 추가 시 grid 구현 부분 제외 시키기기 위해 추가 - yk.byeon
+          idx = 6;
+        }
+
+        if (idx === 2) { //2024.11.07 초기화 시 grid 구현 부분 제외 시키기기 위해 추가 - yk.byeon
           idx = 5;
         }
 
@@ -485,6 +534,8 @@
         let title = document.getElementById('registTitleTxt').value;
         let test_id = document.getElementById('registTestIdTxt').value;
         let contents = document.getElementById('registContentsTxt').value;
+
+
         const params = {
           masterArray: [id, title],
           dtlArray: [test_id, contents, id]
@@ -503,7 +554,7 @@
 
       
       const makeSampleRemoteDataRegist = async () => {
-        const url = "/samples/regist";
+        const url = "http://localhost:3000/samples/regist";
 
         let id = document.getElementById('registIdTxt').value;
         let title = document.getElementById('registTitleTxt').value;
@@ -514,15 +565,38 @@
           dtlArray: [test_id, contents, id]
         };
 
+        sessionStorage.setItem("registParams", params); // sessionStorage 저장 데이터 확인 필요. 현재 String으로만 저장됨.
+
         const result = await commonJS.sendPostAjax(url, params);
+
+        
         if (result.status == 0) {
-          makeSampleRegistGrid(result.data.sampleData);
+          //makeSampleRegistGrid(result.data.sampleData);
+
+          let table = document.getElementById("listRegisterData");
+          let newRow = table.insertRow(-1);
+
+          let cellID = newRow.insertCell(0);
+          let cellTitle = newRow.insertCell(1);
+          let cellTestID = newRow.insertCell(2);
+          let cellContents = newRow.insertCell(3);
+          let cellCreateDate = newRow.insertCell(4);
+          let cellDTLCreateDate = newRow.insertCell(5);
+         
+          cellID.textContent = result.data.sampleData[0].ID;
+          cellTitle.textContent = result.data.sampleData[0].TITLE;
+          cellTestID.textContent = result.data.sampleData[0].TEST_ID;
+          cellContents.textContent = result.data.sampleData[0].CONTENTS;
+          cellCreateDate.textContent = result.data.sampleData[0].CREATE_DATE;
+          cellDTLCreateDate.textContent = result.data.sampleData[0].DTL_CREATE_DATE;
+
         } else {
           alert(result.message);
           if (confirm("상세내역을 확인하시겠습니까?")) {
             alert(JSON.stringify(result.data.sampleData));
           }
         }
+
       };
 
 
@@ -648,7 +722,8 @@
       document.querySelector("#searchActionBtn").addEventListener("click", makeSampleRemoteDataList, false); //2024.11.07 yk.byeon
 
 
-      document.querySelector("#registActionBtn").addEventListener("click", makeSampleDBRegist, false);
+      //document.querySelector("#registActionBtn").addEventListener("click", makeSampleDBRegist, false);
+      document.querySelector("#registActionBtn").addEventListener("click", makeSampleRemoteDataRegist, false);
 
 
       // 초기화

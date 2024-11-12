@@ -50,7 +50,6 @@ router.get("/remote_list", async (req, res) => {
     res.render("samples/sample2", data );
 });
 
-
 router.post("/list", async (req, res) => {
     let params = req.body;
     let result = await sampleCtrl.getSampleDataListAll(params);
