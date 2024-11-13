@@ -3,7 +3,12 @@
         /* id 속성 값으로 선택하기: #아이디값 선택자 */
         background-color: yellowgreen;
     }
+
+    li::marker {
+        content: "😃"; 
+    }
 </style>
+<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
 
 <p id="txt">환영합니다.</p>
 <button type="button" id="btn">클릭해서 텍스트 바꾸기</button>
@@ -29,6 +34,14 @@
 <div></div>
 <div></div>
 
+
+<ul>
+    <li><i class="em em-100" aria-role="presentation" aria-label="HUNDRED POINTS SYMBOL"></i>김밥</li>
+    <li><i class="em em-black_square_button" aria-role="presentation" aria-label="BLACK SQUARE BUTTON"></i>라면</li>
+    <li>떡볶이</li>
+</ul>
+
+
 <script>
     const txt = document.getElementById("txt"); // id="txt" 식별
     const btn = document.getElementById("btn"); // id="btn" 식별
@@ -52,6 +65,15 @@
 
     for (const element of elements) {
         console.log(element);
+    }
+
+    const liElements = document.querySelectorAll("li");
+    console.log(liElements);
+
+    let liElementsLength = liElements.length;
+
+    for (let i = 0 ; i < liElementsLength; i++) {
+        console.log(liElements[i]);
     }
 
 </script>
