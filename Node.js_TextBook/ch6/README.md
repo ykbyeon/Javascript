@@ -21,3 +21,5 @@
 >- [DOM 초보자 가이드](https://creativevista.tistory.com/entry/Javascript%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-DOM-%EB%A7%88%EC%8A%A4%ED%84%B0%ED%95%98%EA%B8%B0-%EC%B4%88%EB%B3%B4%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 >- [(CodingEverybody) JavaScript DOM 요소 및 텍스트](https://codingeverybody.kr/category/javascript/javascript-dom/) :+1:
 >- [(MDN) 문서 객체 모델(DOM)](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model)
+>- [브라우저의 렌더링 방식과 성능 최적화](https://velog.io/@yerim1935/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98-%EB%A0%8C%EB%8D%94%EB%A7%81-%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94)
+>- [DOM 조작을 최소화하여 성능 최적화하기 DocumentFragment](https://kimfield.tistory.com/entry/DOM-%EC%A1%B0%EC%9E%91%EC%9D%84-%EC%B5%9C%EC%86%8C%ED%99%94%ED%95%98%EC%97%AC-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0-DocumentFragment)
