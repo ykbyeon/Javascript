@@ -1,0 +1,42 @@
+<style>
+    #css-selector {
+        /* id 속성 값으로 선택하기: #아이디값 선택자 */
+        background-color: yellowgreen;
+    }
+</style>
+
+<p id="txt">환영합니다.</p>
+<button type="button" id="btn">클릭해서 텍스트 바꾸기</button>
+
+<p>문단 요소입니다.</p>
+<p id="css-selector">문단 요소입니다.</p>
+<p>문단 요소입니다.</p>
+<p>문단 요소입니다.</p>
+
+<section>
+    <div id="div-01" class="container">
+        <div id="div-02" class="container">
+            <div id="me">me</div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const txt = document.getElementById("txt"); // id="txt" 식별
+    const btn = document.getElementById("btn"); // id="btn" 식별
+
+    btn.addEventListener("click", () => {
+        txt.innerHTML = "반갑습니다.";
+    });
+
+    const me = document.getElementById("me");
+
+    console.log(me.closest(".container")); // <div id="div-02" class="container">...</div>
+    console.log(me.closest("section > div")); // <div id="div-01" class="container">...</div>
+
+    /* 해당 요소 자신도 검사 대상에 포함됩니다. */
+    console.log(me.closest("div")); // <div id="me">...</div>
+
+    /* 일치하는 요소가 없으면 null을 반환합니다. */
+    console.log(me.closest("p")); // null
+</script>

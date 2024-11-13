@@ -573,6 +573,9 @@
         if (result.status == 0) {
           //makeSampleRegistGrid(result.data.sampleData);
 
+
+          ///////////////////////////////////////////////////////////////////////
+          // 방법 #1 - Old Style (현재는 사용안함)
           let table = document.getElementById("listRegisterData");
           let newRow = table.insertRow(-1);
 
@@ -595,6 +598,24 @@
           cellCreateDate.className = "remoteDataList2";
           cellDTLCreateDate.textContent = result.data.sampleData[0].DTL_CREATE_DATE;
           cellDTLCreateDate.className = "remoteDataList2";
+          ///////////////////////////////////////////////////////////////////////
+
+
+
+          ///////////////////////////////////////////////////////////////////////
+          // 방법 #2 - appendChild
+
+
+          ///////////////////////////////////////////////////////////////////////
+
+
+
+          ///////////////////////////////////////////////////////////////////////
+          // 방법 #3 - innerHTLM
+
+          
+          ///////////////////////////////////////////////////////////////////////
+
 
         } else {
           alert(result.message);
