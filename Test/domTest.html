@@ -18,8 +18,16 @@
         <div id="div-02" class="container">
             <div id="me">me</div>
         </div>
+        <div id="div-02-2" class="container">
+            <div id="me-2">me</div>
+        </div>
     </div>
 </section>
+
+<div></div>
+<div></div>
+<div></div>
+<div></div>
 
 <script>
     const txt = document.getElementById("txt"); // id="txt" 식별
@@ -39,4 +47,11 @@
 
     /* 일치하는 요소가 없으면 null을 반환합니다. */
     console.log(me.closest("p")); // null
+
+    const elements = document.querySelectorAll("section > div > div");
+
+    for (const element of elements) {
+        console.log(element);
+    }
+
 </script>
