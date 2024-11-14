@@ -73,7 +73,9 @@
     let liElementsLength = liElements.length;
 
     for (let i = 0 ; i < liElementsLength; i++) {
-        console.log(liElements[i]);
-    }
-
+        console.log(liElements[i].textContent, liElements[i].innerText, liElements[i].innerHTML);
+                    //innerText보다는 textContent를 사용하자
+                    //https://stackoverflow.com/questions/35213147/difference-between-textcontent-vs-innertext
+                    //https://kellegous.com/j/2013/02/27/innertext-vs-textcontent/
+    }         
 </script>
