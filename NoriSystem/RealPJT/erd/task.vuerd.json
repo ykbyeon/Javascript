@@ -4,9 +4,9 @@
   "settings": {
     "width": 3300,
     "height": 3300,
-    "scrollTop": 0,
-    "scrollLeft": -198,
-    "zoomLevel": 0.85,
+    "scrollTop": -1083.5128,
+    "scrollLeft": -787.6863,
+    "zoomLevel": 0.37,
     "show": 431,
     "database": 1,
     "databaseName": "odis_db",
@@ -99,7 +99,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1731630392351,
+          "updateAt": 1731906567966,
           "createAt": 1728865631745
         }
       },
@@ -185,7 +185,7 @@
           "8WcX-uoJvLDRHuE1T7MEJ"
         ],
         "ui": {
-          "x": 83.6897,
+          "x": 86.3924,
           "y": 1206,
           "zIndex": 134,
           "widthName": 77,
@@ -193,7 +193,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1731630181414,
+          "updateAt": 1731906570902,
           "createAt": 1728947533689
         }
       },
@@ -2866,7 +2866,7 @@
           "columnIds": [
             "2M-YeRFhXi7tJG-S79B3I"
           ],
-          "x": 476.6897,
+          "x": 479.3924,
           "y": 1270,
           "direction": 2
         },
@@ -2950,7 +2950,7 @@
           "columnIds": [
             "2M-YeRFhXi7tJG-S79B3I"
           ],
-          "x": 280.1897,
+          "x": 282.8924,
           "y": 1206,
           "direction": 4
         },

@@ -1,0 +1,6 @@
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=ykbyeon
+DB_PWD=test1234
+DB_DATABASE=odis_db
+DB_CONN_LIMIT=5
