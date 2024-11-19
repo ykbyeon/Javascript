@@ -1,6 +1,10 @@
 
 # 6장 익스프레스 웹 서버 만들기
 
+## 6.2 자주 사용하는 미들웨어
+>- [[Node.js]express 사용법 총정리(Express 실행, 라우팅, app.use, 에러처리, 정적 파일 제공하기)](https://m.blog.naver.com/hj_kim97/222913693753)
+>- 
+
 ## 6.3 Router 객체로 라우팅 분리하기
 >- [(기타) Express 라우터에 async/await](https://sustainable-dev.tistory.com/79)
 >- [(기타) Express 라우터에 async/await 위 블로그 글 요약](https://github.com/ykbyeon/Javascript/blob/main/Node.js_TextBook/ch6/README_Express_Router_AsyncAwait.md)
