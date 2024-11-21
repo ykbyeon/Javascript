@@ -28,3 +28,6 @@
 >- [브라우저의 렌더링 방식과 성능 최적화](https://velog.io/@yerim1935/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98-%EB%A0%8C%EB%8D%94%EB%A7%81-%EB%B0%A9%EC%8B%9D%EA%B3%BC-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94)
 >- [DOM 조작을 최소화하여 성능 최적화하기 DocumentFragment](https://kimfield.tistory.com/entry/DOM-%EC%A1%B0%EC%9E%91%EC%9D%84-%EC%B5%9C%EC%86%8C%ED%99%94%ED%95%98%EC%97%AC-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0-DocumentFragment)
 >- [innerText vs. textContent](https://kellegous.com/j/2013/02/27/innertext-vs-textcontent/)
+
+## [기타] JWT 인증
+>- [JWT 토큰 인증 이란? (쿠키 vs 세션 vs 토큰)](https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-JWTjson-web-token-%EB%9E%80-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC)
