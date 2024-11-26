@@ -1,10 +1,63 @@
+// {
+//     // Use IntelliSense to learn about possible attributes.
+//     // Hover to view descriptions of existing attributes.
+//     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+//     // Variables Reference : https://code.visualstudio.com/docs/editor/variables-reference
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "type": "node",
+//             "request": "launch",
+//             "name": "Default",
+//             "skipFiles": [
+//                 "<node_internals>/**"
+//             ],
+//             "program": "${file}",
+//             "cwd": "${fileDirname}",
+//             "setupCommands": [
+//                 {
+//                   "description": "Set charset to UTF-8",
+//                   "text": "-exec set charset UTF-8"
+//                 }
+//               ],
+//             "vmArgs": "-Dfile.encoding=UTF-8"
+//         }
+//     ]
+// }
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    // Variables Reference : https://code.visualstudio.com/docs/editor/variables-reference
     "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "Launch All Servers",
+            "configurations": [
+                "Launch Node.js Server",
+                "Launch Node.js Client"
+            ]
+        }
+    ],
     "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Node.js Server",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/NoriSystem/RealPJT/main_prj/app.js",
+            "cwd": "${workspaceFolder}/NoriSystem/RealPJT/main_prj",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Node.js Client",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/NoriSystem/RealPJT/rest_test01/app.js",
+            "cwd": "${workspaceFolder}/NoriSystem/RealPJT/rest_test01",
+            "console": "integratedTerminal"
+        },
         {
             "type": "node",
             "request": "launch",
@@ -14,12 +67,13 @@
             ],
             "program": "${file}",
             "cwd": "${fileDirname}",
+            "console": "integratedTerminal",
             "setupCommands": [
                 {
-                  "description": "Set charset to UTF-8",
-                  "text": "-exec set charset UTF-8"
+                    "description": "Set charset to UTF-8",
+                    "text": "-exec set charset UTF-8"
                 }
-              ],
+            ],
             "vmArgs": "-Dfile.encoding=UTF-8"
         }
     ]
