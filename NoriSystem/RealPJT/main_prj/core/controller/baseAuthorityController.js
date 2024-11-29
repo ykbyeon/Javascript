@@ -53,7 +53,7 @@ const removeUserAuthoization = async ( params ) => {
             return common.makeCommonJsonResult(userDto, 1);
         }
     } else {
-        return common.makeCommonJsonResult('', 1, '삭제할 사용자 정보가 존잰하지 않습니다.');
+        return common.makeCommonJsonResult('', 1, '삭제할 사용자 정보가 존재하지 않습니다.');
     }
 }
 

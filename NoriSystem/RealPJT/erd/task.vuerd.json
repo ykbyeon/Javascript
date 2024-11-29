@@ -4,9 +4,9 @@
   "settings": {
     "width": 3300,
     "height": 3300,
-    "scrollTop": -1083.5128,
-    "scrollLeft": -787.6863,
-    "zoomLevel": 0.37,
+    "scrollTop": -384.2618,
+    "scrollLeft": -345.1619,
+    "zoomLevel": 0.73,
     "show": 431,
     "database": 1,
     "databaseName": "odis_db",
@@ -3107,38 +3107,6 @@
           "updateAt": 1729250897499,
           "createAt": 1729250897499
         }
-      },
-      "V6TwgbVGYLaBg3WSwn-mS": {
-        "id": "V6TwgbVGYLaBg3WSwn-mS",
-        "identification": false,
-        "relationshipType": 8,
-        "startRelationshipType": 2,
-        "start": {
-          "tableId": "vWICrsh-DOWje53ENOD20",
-          "columnIds": [
-            "ZTyC6WtcaNFWNF9w-adJR",
-            "BUG4xbeAjHNDNYgvehHa1",
-            "gC3Fq5N597D2IchQ8D3Mj"
-          ],
-          "x": 889.8329,
-          "y": 538.6819,
-          "direction": 8
-        },
-        "end": {
-          "tableId": "uHYak5XTsXljg44jymP1t",
-          "columnIds": [
-            "ieukSep4JVmm9Cj2GzNzG",
-            "7MqoDDrFBc9m70utEbn5F",
-            "L0STdiXOqNCS82OTE8vIs"
-          ],
-          "x": 866.0451,
-          "y": 566.8181,
-          "direction": 4
-        },
-        "meta": {
-          "updateAt": 1731631641728,
-          "createAt": 1731631641728
-        }
       }
     },
     "indexEntities": {},
@@ -4528,12 +4496,6 @@
         "default": 1731631641723,
         "comment": 1731631641723
       }
-    ],
-    "V6TwgbVGYLaBg3WSwn-mS": [
-      "relationshipEntities",
-      1731631641723,
-      1731631666450,
-      {}
     ]
   }
 }
