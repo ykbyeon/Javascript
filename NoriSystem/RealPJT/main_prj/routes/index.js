@@ -6,7 +6,7 @@ import path from "path";
 
 router.get("/", async (req, res) => {
     const data = {
-        "title": "제목 테스트 입니다.",
+        "title": "제목 테스트 입니다.", 
         "message": "My World!!!",
         'infos': {
             mainTitle : 'Home',
